@@ -1,24 +1,15 @@
-# README
+# Check Your Reps
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A platform for congressional scorecards.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+These instructions run Rails natively on the host and Postgres in a Docker container.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You will need Ruby 2.3.1, Node 6.0.0, Docker, and Docker Compose. Then run:
+```
+cp .env.example .env
+docker-compose up -d
+bundle install
+rails s
+```
