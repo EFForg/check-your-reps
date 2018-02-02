@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CheckYourReps</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheckYourReps</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body class="section-<%= controller_name %> page-<%= action_name %>">
+  <a href="#main-content" class="show-for-sr">Skip to main content</a>
+  <%= render "layouts/header" %>
+
+  <div id="main-content">
     <%= yield %>
-  </body>
+  </div>
+
+  <%= render "layouts/footer" %>
+</body>
 </html>
