@@ -16,8 +16,9 @@ You will need Ruby 2.3.1, Node 6.0.0+, Yarn, and Postgres. Then run:
   * `cp .env.example .env`
   * Fill in postgres username and password
 
-3. Create the default admin user
+3. Create the default admin user and import Congress members.
   * `rake db:seed`
+  * `rake reps:update`
 
 4. `rails s`
 
