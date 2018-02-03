@@ -4,12 +4,23 @@ A platform for congressional scorecards.
 
 ## Development
 
-These instructions run Rails natively on the host and Postgres in a Docker container.
+You will need Ruby 2.3.1, Node 6.0.0+, Yarn, and Postgres. Then run:
 
-You will need Ruby 2.3.1, Node 6.0.0, Docker, and Docker Compose. Then run:
-```
-cp .env.example .env
-docker-compose up -d
-bundle install
-rails s
-```
+1. Install packages:
+  * `sudo apt-get libpq-dev`
+  * `gem install bundler`
+  * `bundle install`
+  * `yarn install`
+
+2. Add your database credentials:
+  * `cp .env.example .env`
+  * Fill in postgres username and password
+
+3. Create the default admin user
+  * `rake db:seed`
+
+4. `rails s`
+
+You should now be able to login with the default admin credentials:
+* User: admin@example.com
+* Password: password
