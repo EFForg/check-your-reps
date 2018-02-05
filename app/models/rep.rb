@@ -2,5 +2,8 @@ class Rep < ApplicationRecord
   has_one :score, dependent: :destroy
   accepts_nested_attributes_for :score
   delegate :position, :source_url, :to => :score
-end
 
+  validates_uniqueness_of :bioguide_id
+
+  scope :without_scores, -> { left_outer_joins(:score).where(scores: { id: nil }) }
+end
