@@ -5,5 +5,7 @@ class Rep < ApplicationRecord
 
   validates_uniqueness_of :bioguide_id
 
+  default_scope { order(name: :asc) }
+  scope :current, ->{ where("? <= term_end", Time.now) }
   scope :without_scores, -> { left_outer_joins(:score).where(scores: { id: nil }) }
 end
