@@ -20,6 +20,7 @@
           width: 100%;
           padding: 0.2rem 4%;
           text-decoration: none;
+          text-transform: uppercase;
           &:active,
           &:focus,
           &:hover,
@@ -27,16 +28,37 @@
             text-decoration: underline;
           }
         }
-
-        &:first-child {
-          margin-left: 4px;
-        }
-
-        &:last-child {
-          margin-right: 4px;
-        }
       }
-
     }
+  }
+}
+
+header {
+  background-image: url("banner.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  .project-of {
+    color: white;
+    font-size: 0.7rem;
+    margin: 3rem 0 .1rem;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .site-name {
+    color: white;
+    a {
+      color: white;
+    }
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 2rem;
+    text-transform: uppercase;
   }
 }
