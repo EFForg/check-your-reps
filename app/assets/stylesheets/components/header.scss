@@ -1,12 +1,13 @@
 .top-bar {
   background: black;
   color: $orange;
+  padding: 0.2rem 0;
   #main-menu {
     ul {
+      background-color: black;
       display: flex;
       list-style-type: none;
-      background-color: black;
-
+      margin-bottom: 0;
       li {
         flex: 1;
         margin: 0 2px;
