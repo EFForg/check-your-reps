@@ -3,7 +3,7 @@ ActiveAdmin.register Score do
 
   form do |f|
     f.inputs do
-      input :rep_id, :as => :select, :collection => Rep.current.without_scores
+      input :rep_id, as: :select, collection: Rep.current.without_scores
       input :position
       input :source_url
     end

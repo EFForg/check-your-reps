@@ -9,3 +9,4 @@ AllCops:
     - 'bin/**/*'
     - 'spec/**/*'
     - 'vendor/**/*'
+    - 'node_modules/**/*'
