@@ -1,0 +1,41 @@
+.top-bar {
+  background: black;
+  color: $orange;
+  #main-menu {
+    ul {
+      display: flex;
+      list-style-type: none;
+      background-color: black;
+
+      li {
+        flex: 1;
+        margin: 0 2px;
+        background-color: black;
+        a {
+          display: inline-block;
+          font-size: 0.9rem;
+          font-weight: 600;
+          height: 100%;
+          width: 100%;
+          padding: 0.2rem 4%;
+          text-decoration: none;
+          &:active,
+          &:focus,
+          &:hover,
+          &:visited {
+            text-decoration: underline;
+          }
+        }
+
+        &:first-child {
+          margin-left: 4px;
+        }
+
+        &:last-child {
+          margin-right: 4px;
+        }
+      }
+
+    }
+  }
+}
