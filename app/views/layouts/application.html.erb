@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CheckYourReps</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <title><%= content_for?(:title) ? yield(:title) : "Check Your Reps" %></title>
 
-<body class="section-<%= controller_name %> page-<%= action_name %>">
-  <a href="#main-content" class="show-for-sr">Skip to main content</a>
-  <%= render "layouts/header" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  <div id="main-content">
-    <%= yield %>
-  </div>
-
-  <%= render "layouts/footer" %>
-</body>
+  <body class="section-<%= controller_name %> page-<%= action_name %>">
+    <a href="#main-content" class="show-for-sr">Skip to main content</a>
+    <%= render "layouts/header" %>
+    <div id="main-content">
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
+  </body>
 </html>

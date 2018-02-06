@@ -1,21 +1,20 @@
 <div class="header-wrapper">
   <div class="top-bar">
     Here's the top bar.
+    <nav id="main-menu" aria-labelledby="main-menu-label" class="large-12 columns">
+      <h2 id="main-menu-label" class="show-for-sr">Main Menu</h2>
+      <ul class="row">
+        <li>About</li>
+        <li>Scorecard</li>
+        <li>Action</li>
+      </ul>
+    </nav>
   </div>
 
 
   <header>
-    <div class="site-name">
-      <%= link_to "Save Net Neutrality", "/" %>
+    <div class="site-name large-12 columns center">
+      <h1><%= link_to "Save Net Neutrality", "/" %></h1>
     </div>
   </header>
 </div>
-
-<nav id="main-menu" aria-labelledby="main-menu-label">
-  <h2 id="main-menu-label" class="show-for-sr">Main Menu</h2>
-  <ul class="row">
-    <li>About</li>
-    <li>Scorecard</li>
-    <li>Action</li>
-  </ul>
-</nav>
