@@ -6,15 +6,17 @@
     ul {
       background-color: black;
       display: flex;
+      align-items: center;
       list-style-type: none;
       margin-bottom: 0;
+      max-width: 60rem;
       li {
         flex: 1;
         margin: 0 2px;
         background-color: black;
         a {
           display: inline-block;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           font-weight: 600;
           height: 100%;
           width: 100%;
@@ -27,6 +29,9 @@
           &:visited {
             text-decoration: underline;
           }
+          @include breakpoint(medium) {
+            font-size: 0.95rem;
+          }
         }
       }
     }
@@ -36,29 +41,45 @@
 header {
   background-image: url("banner.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   display: inline-block;
+  @include breakpoint(medium) {
+    background-size: 100%;
+  }
   .project-of {
     color: white;
-    font-size: 0.7rem;
-    margin: 3rem 0 .1rem;
+    font-size: 0.6rem;
+    margin: 1rem 0 0;
+    @include breakpoint(medium) {
+      font-size: 0.7rem;
+      margin: 3rem 0 .1rem;
+    }
     a {
       color: white;
       text-decoration: underline;
     }
   }
   h3 {
-    text-transform: uppercase;
+    font-size: 1rem;
     margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    @include breakpoint(medium) {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
   }
   .site-name {
     color: white;
     a {
       color: white;
     }
-    font-size: 3rem;
+    font-size: 1.7rem;
     font-weight: 400;
-    line-height: 2rem;
+    line-height: 1.2rem;
     text-transform: uppercase;
+    @include breakpoint(medium) {
+      font-size: 3rem;
+      line-height: 2rem;
+    }
   }
 }
