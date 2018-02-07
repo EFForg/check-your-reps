@@ -1,20 +1,21 @@
 <div class="header-wrapper">
   <div class="top-bar">
-    Here's the top bar.
     <nav id="main-menu" aria-labelledby="main-menu-label" class="large-12 columns">
-      <h2 id="main-menu-label" class="show-for-sr">Main Menu</h2>
-      <ul class="row">
-        <li>About</li>
-        <li>Scorecard</li>
-        <li>Action</li>
-      </ul>
-    </nav>
+      <ul class="row center">
+        <li><%= link_to "Act Now", "/" %></li>
+        <li><%= link_to "Scorecard", "/" %></li>
+        <li><%= link_to "About", "/" %></li>
+      </nav>
+    </div>
   </div>
 
 
-  <header>
-    <div class="site-name large-12 columns center">
-      <h1><%= link_to "Save Net Neutrality", "/" %></h1>
+  <header class="large-12 columns center">
+    <div class="project-of">A project of the <a href="https://eff.org">Electronic Frontier Foundation</a>
+    </div>
+    <h3 class="center">Check Your Reps:</h3>
+    <div class="site-name">
+      <%= link_to "Save the Neutral Net", "/" %>
     </div>
   </header>
 </div>
