@@ -12,9 +12,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
-  @include breakpoint(medium) {
-    background-size: 100%;
-  }
   .project-of {
     color: white;
     font-size: 0.6rem;
@@ -47,8 +44,8 @@ header {
     line-height: 1.2rem;
     text-transform: uppercase;
     @include breakpoint(medium) {
-      font-size: 3rem;
-      line-height: 2rem;
+      font-size: 3.3rem;
+      line-height: 2.3rem;
     }
   }
 }
