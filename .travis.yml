@@ -1,0 +1,21 @@
+language: ruby
+cache:
+  bundler: true
+  directories:
+    - node_modules
+rvm:
+  - 2.4
+services:
+  - postgresql
+before_install:
+  - gem install bundler
+install:
+  - bundle install --path vendor/bundle
+  - yarn install
+before_script:
+  - psql -c 'create database "check-your-reps_test";' -U postgres
+script:
+  - bundle exec rubocop
+  - ./node_modules/.bin/sass-lint -vq
+  - ./node_modules/.bin/eslint app/javascript
+  - bundle exec rspec
