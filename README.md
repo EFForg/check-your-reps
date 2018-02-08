@@ -25,3 +25,5 @@ You will need Ruby 2.3.1, Node 6.0.0+, Yarn, and Postgres. Then run:
 You should now be able to login with the default admin credentials:
 * User: admin@example.com
 * Password: password
+
+You can run all tests and linters with `rake test`.
