@@ -31,5 +31,10 @@ button.white-button {
 }
 
 button.tweet-button {
-  background: $orange url('images/checked.png');
+  background: $orange url('twitter-icon.svg') no-repeat;
+  background-position-x: 1rem;
+  padding-right: 1.5rem;
+  text-align: right;
+  text-transform: none;
+  width: 16rem;
 }

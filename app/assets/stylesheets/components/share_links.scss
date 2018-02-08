@@ -80,31 +80,17 @@ $social-link-text-width: 12.5rem;
   }
 }
 
-
-.pane-eff-share-blog.mobile .share-links {
-
-  > a {
-    display: inline-block;
-    float: left;
-    margin-left: $social-icon-mobile-size/4;
-
-    &.share-clipboard {
-      display: none;
-    }
-  }
-}
-
 .share-links {
   @include share-links-container($social-icon-mobile-size);
-  margin: 2.5rem auto 0;
-  width: 43%;
+  display: block;
+  margin: 2.5rem auto 2rem;
+  padding-bottom: 3rem;
+  width: 140px;
   z-index: 3;
-
   > a {
     display: inline-block;
     float: left;
     margin-left: $social-icon-mobile-size/4;
-
     &.share-clipboard {
       display: none;
     }
@@ -112,9 +98,11 @@ $social-link-text-width: 12.5rem;
 
   @include breakpoint(medium) {
     @include share-links-container($social-icon-desktop-size);
-    margin-top: 8rem;
-    display: block;
+    padding-bottom: 0;
     position: absolute;
+    top: 8rem;
+    width: inherit;
+
     > a {
       display: block;
       float: none;
