@@ -1,0 +1,44 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .top-bar {
+    padding: 0.5rem 10%;
+    #footer-menu {
+      @include menus;
+      ul li {
+        a {
+          font-size: 0.8rem;
+          font-weight: 500;
+          line-height: 1rem;
+        }
+      }
+    }
+
+    @include breakpoint(small only) {
+      padding: 0.2rem 1rem;
+      #footer-menu {
+        ul li {
+          text-align: left;
+          margin-left: 10%;
+          a {
+            font-size: 0.6rem;
+          }
+          &:last-child {
+            margin-right: 5%;
+            text-align: right;
+          }
+          &:first-child {
+            margin-right: 10%;
+            min-width: 85%;
+            a {
+              padding-left: 0;
+              padding-right:0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
