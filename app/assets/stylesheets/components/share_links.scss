@@ -69,13 +69,12 @@ $social-link-text-width: 12.5rem;
 }
 
 @mixin expanded-share-link($icon-size) {
+  width: 1.12*$icon-size + $social-link-text-width + $icon-size/5.7;
+  transition: width 130ms;
   i {
     position: relative;
     z-index: 2;
   }
-  width: 1.12*$icon-size + $social-link-text-width + $icon-size/5.7;
-  transition: width 130ms;
-
   span {
     visibility: visible;
   }
@@ -111,7 +110,7 @@ $social-link-text-width: 12.5rem;
     }
   }
 
-  @include breakpoint(medium){
+  @include breakpoint(medium) {
     @include share-links-container($social-icon-desktop-size);
     margin-top: 8rem;
     display: block;

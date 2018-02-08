@@ -6,12 +6,10 @@ footer {
     padding: 0.5rem 10%;
     #footer-menu {
       @include menus;
-      ul li {
-        a {
-          font-size: 0.8rem;
-          font-weight: 500;
-          line-height: 1rem;
-        }
+      ul li a {
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1rem;
       }
     }
 
@@ -33,7 +31,7 @@ footer {
             min-width: 85%;
             a {
               padding-left: 0;
-              padding-right:0;
+              padding-right: 0;
               width: 100%;
             }
           }
