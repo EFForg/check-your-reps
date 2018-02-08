@@ -4,40 +4,52 @@
   padding: 0.2rem 0;
   #main-menu {
 
-    ul {
-      background-color: black;
-      display: flex;
-      list-style-type: none;
-      margin-bottom: 0;
+    @include menus;
+  }
+}
+
+header {
+  background-image: url("banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  @include breakpoint(medium) {
+    background-size: 100%;
+  }
+  .project-of {
+    color: white;
+    font-size: 0.6rem;
+    margin: 1rem 0 0;
+    @include breakpoint(medium) {
+      font-size: 0.7rem;
+      margin: 3rem 0 0.1rem;
     }
-
-    li {
-      flex: 1;
-      margin: 0 2px;
-      background-color: black;
-      a {
-        display: inline-block;
-        font-size: 0.9rem;
-        font-weight: 600;
-        height: 100%;
-        width: 100%;
-        padding: 0.2rem 4%;
-        text-decoration: none;
-        &:active,
-        &:focus,
-        &:hover,
-        &:visited {
-          text-decoration: underline;
-        }
-      }
-
-      &:first-child {
-        margin-left: 4px;
-      }
-
-      &:last-child {
-        margin-right: 4px;
-      }
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    @include breakpoint(medium) {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .site-name {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+    a {
+      color: white;
+    }
+    @include breakpoint(medium) {
+      font-size: 3rem;
+      line-height: 2rem;
     }
 
   }
