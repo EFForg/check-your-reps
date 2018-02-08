@@ -1,0 +1,12 @@
+inherit_gem:
+  rubocop-github:
+    - config/default.yml
+    - config/rails.yml
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'

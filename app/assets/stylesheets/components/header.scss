@@ -3,6 +3,7 @@
   color: $orange;
   padding: 0.2rem 0;
   #main-menu {
+
     @include menus;
   }
 }
@@ -50,5 +51,6 @@ header {
       font-size: 3rem;
       line-height: 2rem;
     }
+
   }
 }
