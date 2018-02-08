@@ -1,6 +1,6 @@
 input {
   border-radius: 0;
-  border:1px solid black !important;
+  border: 1px solid black !important;
   color: $dark-gray !important;
   margin: 1rem auto !important;
   width: 11rem !important;
@@ -11,7 +11,6 @@ button {
   border-radius: rem-calc(7);
   clear: left;
   color: white;
-  clear: left;
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
@@ -29,4 +28,8 @@ button.white-button {
   font-size: 0.7rem;
   font-weight: 500;
   width: 9rem;
+}
+
+button.tweet-button {
+  background: $orange url('images/checked.png');
 }
