@@ -151,9 +151,18 @@ table {
   width: 100%;
   th {
     background: url("sort-triangles.svg") no-repeat;
-    background-position: right center;
+    background-position: 51% center;
     background-size: 10px;
     cursor: pointer;
+    &:first-child {
+      background-position-x: 25%;
+    }
+    &:nth-child(3) {
+      background-position-x: 65%;
+    }
+    &:last-child {
+      background: none;
+    }
   }
 }
 
