@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :rep do
+  factory :congress_member do
     sequence(:bioguide_id) { |n| "A00000#{n}" }
     term_end (Time.now + 1.year).strftime("%Y-%m-%d")
     name "Buffy Summers"
@@ -9,7 +9,7 @@ FactoryBot.define do
       chamber "senate"
     end
 
-    factory :house_rep do
+    factory :representative do
       chamber "house"
     end
   end
