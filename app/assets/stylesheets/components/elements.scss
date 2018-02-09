@@ -1,0 +1,46 @@
+input {
+  border-radius: 0;
+  border: 1px solid black !important;
+  color: $dark-gray !important;
+  margin: 1rem auto !important;
+  width: 100% !important;
+  @include breakpoint(medium) {
+    width: 11rem !important;
+  }
+}
+button {
+  background-color: $orange;
+  border: 1px solid $orange;
+  border-radius: rem-calc(7);
+  clear: left;
+  color: white;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  width: 100%;
+  @include breakpoint(medium) {
+    width: 11rem;
+  }
+}
+
+button.white-button {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-size: 0.7rem;
+  font-weight: 500;
+  width: 9rem;
+}
+
+button.tweet-button {
+  background: $orange url('twitter-icon.svg') no-repeat;
+  background-position-x: 1rem;
+  padding-right: 1.5rem;
+  text-align: right;
+  text-transform: none;
+  width: 16rem;
+}
