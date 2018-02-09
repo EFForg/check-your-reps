@@ -1,6 +1,7 @@
 $(function(){
   $('button.white-button').click(function() {
-    $(this).css({'background':'black', 'color':'white'})
+    $(this).css({'background':'black', 'color':'white'});
+    $("a", this).css({'color':'white'});
   })
  });
 
@@ -36,4 +37,4 @@ $(function(){
  }
 
  window.onload = function () {makeAllSortable();};
- //found this code here: https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript 
+ //found this code here: https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript
