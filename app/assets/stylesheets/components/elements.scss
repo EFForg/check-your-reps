@@ -3,7 +3,10 @@ input {
   border: 1px solid black !important;
   color: $dark-gray !important;
   margin: 1rem auto !important;
-  width: 11rem !important;
+  width: 100% !important;
+  @include breakpoint(medium) {
+    width: 11rem !important;
+  }
 }
 button {
   background-color: $orange;
@@ -18,7 +21,10 @@ button {
   margin: 1rem auto;
   padding: 0.5rem;
   text-transform: uppercase;
-  width: 11rem;
+  width: 100%;
+  @include breakpoint(medium) {
+    width: 11rem;
+  }
 }
 
 button.white-button {
