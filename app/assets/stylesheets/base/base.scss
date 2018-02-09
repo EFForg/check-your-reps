@@ -150,6 +150,9 @@ table {
   border-spacing: 0;
   width: 100%;
   th {
+    background: url("sort-triangles.svg") no-repeat;
+    background-position: right center;
+    background-size: 10px;
     cursor: pointer;
   }
 }
