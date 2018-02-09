@@ -63,7 +63,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   text-transform: uppercase;
   @include breakpoint(medium) {
     line-height: 1.7rem;
@@ -149,6 +149,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  th {
+    cursor: pointer;
+  }
 }
 
 
