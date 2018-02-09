@@ -1,4 +1,25 @@
 .homepage {
   display: inline-block;
   width: 100%;
+  .your-zip {
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .your-reps-grid {
+    display: flex;
+    margin-bottom: 2rem;
+    .your-reps-yes {
+      @include your-reps-block;
+    }
+    .your-reps-no {
+      @include your-reps-block;
+      img {
+        border-bottom: 15px solid $eff-red;
+      }
+      .your-rep .position a {
+        color: $eff-red;
+      }
+    }
+  }
 }
