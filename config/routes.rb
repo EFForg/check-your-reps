@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get "/about", as: :about, to: "about#index"
+  get "/scorecard", as: :scorecard, to: "scorecard#index"
 end
