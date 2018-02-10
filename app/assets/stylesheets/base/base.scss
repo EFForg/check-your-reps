@@ -148,21 +148,39 @@ hr {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  margin-left: -7%;
   width: 100%;
+  thead {
+    background: white;
+  }
   th {
     background: url("sort-triangles.svg") no-repeat;
-    background-position: 51% center;
+    background-position: 57px center;
     background-size: 10px;
     cursor: pointer;
     &:first-child {
-      background-position-x: 25%;
+      background-position-x: 56px;
     }
     &:nth-child(3) {
-      background-position-x: 65%;
+      background-position-x: 70px;
+      @include breakpoint(medium) {
+        background-position-x: 77px;
+      }
     }
     &:last-child {
       background: none;
     }
+  }
+  td {
+    &:first-child {
+      font-weight: 500;
+    }
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color: #F0EFEF;
+  }
+  @include breakpoint(medium) {
+    margin-left: 0;
   }
 }
 
