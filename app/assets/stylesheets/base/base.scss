@@ -148,21 +148,28 @@ hr {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  margin-left: -7%;
   width: 100%;
+  @include breakpoint(medium) {
+    margin: 0 auto;
+  }
   thead {
     background: white;
   }
   th {
     background: url("sort-triangles.svg") no-repeat;
     background-position: 57px center;
-    background-size: 10px;
+    background-size: 9px;
     cursor: pointer;
+    font-size: 0.9rem;
+    @include breakpoint(medium) {
+      background-size: 10px;
+      font-size: 1rem;
+    }
     &:first-child {
       background-position-x: 56px;
     }
     &:nth-child(3) {
-      background-position-x: 70px;
+      background-position-x: 76px;
       @include breakpoint(medium) {
         background-position-x: 77px;
       }
@@ -174,6 +181,12 @@ table {
   td {
     &:first-child {
       font-weight: 500;
+    }
+  }
+  tbody th, tbody td {
+    padding: 0.5rem 0.3rem;
+    @include breakpoint(medium) {
+      padding: 0.5rem 0.625rem;
     }
   }
   tbody tr:nth-child(2n+1) {

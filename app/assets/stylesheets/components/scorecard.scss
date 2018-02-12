@@ -1,0 +1,27 @@
+.scorecard {
+  table {
+    th {
+      &:first-child {
+        background-position-x: 56px;
+      }
+      &:nth-child(3) {
+        background-position-x: 72px;
+        @include breakpoint(medium) {
+          background-position-x: 77px;
+        }
+      }
+    }
+    td {
+      &:first-child,
+      &:last-child {
+        font-weight: 500;
+      }
+      &:last-child {
+        font-size: 0.9rem;
+        @include breakpoint(medium) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
