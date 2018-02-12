@@ -8,6 +8,8 @@ module SmartyStreets
       district = res.first.dig("metadata", "congressional_district")
       district = "0" if district == "AL"
       [res.first["components"]["state_abbreviation"], district]
+    else
+      false
     end
   end
 

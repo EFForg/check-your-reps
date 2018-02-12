@@ -1,3 +1,7 @@
+<% if @scores.empty? %>
+  Sorry, we couldn't find any scores for that address.
+<% end %>
+
 <% @scores.each do |score| %>
   <%= render score, locals: { score: score } %>
 <% end %>

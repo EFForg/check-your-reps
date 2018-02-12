@@ -13,6 +13,8 @@ class CongressMember < ApplicationRecord
     state, district = SmartyStreets.get_congressional_district(street, zipcode)
     if state && district
       current.where(state: state).where("chamber = ? OR district = ?", "senate", district)
+    else
+      none
     end
   end
 end
