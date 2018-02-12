@@ -1,5 +1,9 @@
 class ScoresController < ApplicationController
   def lookup
-    render json: CongressMember.lookup(params[:street], params[:zipcode])
+    @scores = Score.lookup(params[:street], params[:zipcode])
+    respond_to do |format|
+      format.html { render "home/index" }
+      format.json { render json: @scores }
+    end
   end
 end
