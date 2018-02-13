@@ -39,6 +39,14 @@ button.white-button {
   }
 }
 
+button.white-button.clicked {
+  background-color: black;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 button.tweet-button {
   background: $orange url('twitter-icon.svg') no-repeat;
   background-position-x: 1rem;
