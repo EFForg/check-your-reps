@@ -1,4 +1,4 @@
-namespace :reps do
+namespace :congress do
   desc "Create/update records of Congress members"
   task update: :environment do
     legislator_sources =
@@ -24,7 +24,7 @@ namespace :reps do
           district:    term["district"].try(:to_s)
         }
 
-        Rep.
+        CongressMember.
           find_or_initialize_by(bioguide_id: info["id"]["bioguide"]).
           update_attributes!(attributes)
       end

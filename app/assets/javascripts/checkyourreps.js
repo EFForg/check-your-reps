@@ -1,5 +1,5 @@
-$(function(){
-  $('button.white-button').click(function() {
-    $(this).css({'background':'black', 'color':'white'})
-  })
- });
+$(function () {
+  $('button.white-button').click(() => {
+    $(this).css({ background: 'black', color: 'white' });
+  });
+});
