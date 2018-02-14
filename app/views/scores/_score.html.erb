@@ -1,5 +1,13 @@
-Name: <%= score.congress_member.name %>
-<br />
-Score: <%= score.position %>
-<br />
-Source: <%= score.source_url %>
+<div class="<%= score.position == "Yes" ? "your-reps-yes" : "your-reps-no" %>">
+  <div class="your-rep">
+    <img src="/assets/nancy.svg">
+    <div class="rep-name">
+      <%= score.congress_member.name %>
+    </div>
+    <div class="position">
+      <a href="<%= score.source_url %>">
+        <%= score.position %>
+      </a>
+    </div>
+  </div>
+</div>

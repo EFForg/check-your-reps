@@ -1,7 +1,14 @@
 <% if @scores.empty? %>
   Sorry, we couldn't find any scores for that address.
-<% end %>
-
-<% @scores.each do |score| %>
-  <%= render score, locals: { score: score } %>
+<% else %>
+  <h2>Your representatives</h2>
+  <div class="your-zip">
+    <%# @todo fill in zip %>
+    California 94609
+  </div>
+  <div class="your-reps-grid">
+    <% @scores.each do |score| %>
+      <%= render score, locals: { score: score } %>
+    <% end %>
+  </div>
 <% end %>
