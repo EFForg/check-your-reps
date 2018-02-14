@@ -25,4 +25,14 @@
       }
     }
   }
+  .smarty-api-why {
+    text-align: center;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    margin-top: -0.5rem;
+    .has-tip {
+      color: $orange;
+      font-weight: 400;
+    }
+  }
 }
