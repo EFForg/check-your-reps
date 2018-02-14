@@ -48,18 +48,18 @@
     }
     .position {
       background: url("external-link-icon.jpg") no-repeat;
-      background-position-x: right;
-      background-position-y: 23px;
+      background-position-x: 83%;
+      background-position-y: 80%;
       font-weight: 500;
       margin: 0 auto;
       text-align: center;
-      width: 5rem;
+      width: 6rem;
       a {
         color: $green;
         text-decoration: underline;
       }
       &:before {
-        content: "position";
+        content: "CRA position";
         font-size: 0.9rem;
         font-weight: 300;
       }
