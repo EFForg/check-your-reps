@@ -1,62 +1,19 @@
 <div class="homepage">
   <div class="row align-center">
     <div class="large-8 medium-10 small-11 columns">
-      <p>On December 14, 2017, the FCC voted to end net neutrality protections. Net neutrality
-        protections ensured that Internet service providers (ISPs) treated all data that traveled
-        over their networks equally. Now, the way is paved for ISPs to starting blocking or
-        throttling access online and for them to charge extra for data to be transmitted faster.
-        But Congress can stop it. A majority vote in both houses can overturn the FCC’s order
-        and restore net neutrality.
-        On TK, the Senate reached 51 votes in favor of repealing the FCC’s order. That means
-        that the future of net neutrality is all in the hands of the House of Representatives.
-        Tell your representatives how important net neutrality is and, if they haven’t already, to
-        voice their support for bringing back real net neutrality.</p>
-        <h2>Your representatives</h2>
-        <div class="your-zip">
-          California 94609
-        </div>
-        <div class="your-reps-grid">
-          <div class="your-reps-yes">
-            <div class="your-rep">
-              <img src="/assets/nancy.svg">
-              <div class="rep-name">
-                1Rep. Firstname Lastname1
-              </div>
-              <div class="position">
-                Yes
-              </div>
-            </div>
-          </div>
-          <div class="your-reps-yes">
-            <div class="your-rep">
-              <img src="/assets/nancy.svg">
-              <div class="rep-name">
-                2Rep. Firstname Lastname2
-              </div>
-              <div class="position">
-                Yes
-              </div>
-            </div>
-          </div>
-          <div class="your-reps-no">
-            <div class="your-rep">
-              <img src="/assets/nancy.svg">
-              <div class="rep-name">
-                3Rep. Firstname Lastname3
-              </div>
-              <div class="position">
-                <%= link_to "Yes", "/scorecard" %>
-              </div>
-            </div>
-          </div>
-        </div>
+      <% if @scores %>
+        <%= render partial: "scores/local_scores" %>
+      <% else %>
+        <p>On December 14, 2017, the FCC voted to end net neutrality protections. Net neutrality protections ensured that Internet service providers (ISPs) treated all data that traveled over their networks equally. Now, the way is paved for ISPs to starting blocking or throttling access online and for them to charge extra for data to be transmitted faster.  But Congress can stop it. A majority vote in both houses can overturn the FCC’s order and restore net neutrality.  On TK, the Senate reached 51 votes in favor of repealing the FCC’s order. That means that the future of net neutrality is all in the hands of the House of Representatives.  Tell your representatives how important net neutrality is and, if they haven’t already, to voice their support for bringing back real net neutrality.</p>
         <p>Enter your zip code and see where your rep stands!</p>
-        <form>
-          <input type="text" value="Zip Code" id="zipcode"></input>
-          <button>Look Up</button>
+        <form action="/scores/lookup" method="get">
+          <input type="text" placeholder="Street Address" name="street"></input>
+          <input type="text" placeholder="Zip Code" name="zipcode"></input>
+          <submit>Look Up</submit>
           <button class="white-button"><%= link_to "See All Reps", "/scorecard" %></button>
         </form>
         <button class="tweet-button">Tweet to Your Followers</button>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
