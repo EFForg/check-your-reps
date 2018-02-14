@@ -39,7 +39,7 @@ button.white-button {
   }
 }
 
-button.white-button.clicked {
+button.white-button:active {
   background-color: black;
   color: white;
   a {
