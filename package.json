@@ -2,7 +2,8 @@
   "name": "check-your-reps",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.2.1"
+    "@rails/webpacker": "^3.2.1",
+    "tablesort": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^4.17.0",

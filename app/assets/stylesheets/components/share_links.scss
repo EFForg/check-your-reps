@@ -45,7 +45,7 @@ $social-link-text-width: 12.5rem;
       text-transform: uppercase;
       font-size: 0.9rem;
 
-      background-color: transparent;
+      background-color: white;
       border-left: 0.12*$icon-size solid #fff;
     }
 
@@ -85,7 +85,7 @@ $social-link-text-width: 12.5rem;
   display: block;
   margin: 2.5rem auto 2rem;
   padding-bottom: 3rem;
-  width: 140px;
+  width: 146px;
   z-index: 3;
   > a {
     display: inline-block;
@@ -100,8 +100,8 @@ $social-link-text-width: 12.5rem;
     @include share-links-container($social-icon-desktop-size);
     padding-bottom: 0;
     position: absolute;
-    top: 8rem;
-    width: inherit;
+    top: 18rem;
+    width: 55px;
 
     > a {
       display: block;
