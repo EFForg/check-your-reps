@@ -27,7 +27,7 @@ describe "Public access to scores", type: :request do
 
     it "shows the user's state and district" do
       get "/scores/lookup", params: address
-      expect(response.body).to include("CA, District 14")
+      expect(response.body).to include("California District 14")
     end
 
     it "looks up scorecards by address" do
