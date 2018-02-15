@@ -37,7 +37,7 @@ input[type="submit"] {
   font-size: 0.7rem;
   font-weight: 500;
   margin: 1rem auto;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-transform: uppercase;
   width: 9rem;
@@ -51,6 +51,9 @@ input[type="submit"] {
     background-color: black;
     color: white;
     text-decoration: none;
+    a {
+      color: white;
+    }
   }
 }
 
