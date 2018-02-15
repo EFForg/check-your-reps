@@ -77,13 +77,14 @@ button.tweet-button {
 .tooltip {
   border-bottom: 1px dotted black;
   color: $orange;
+  cursor: help;
   display: inline-block;
   font-size: 0.6rem;
   line-height: 0.6rem;
   padding: 0;
   position: relative;
 
-  .tooltiptext {
+  .tooltip-text {
     background-color: $light-gray;
     border-radius: 6px;
     color: black;
@@ -98,7 +99,7 @@ button.tweet-button {
     top: -5rem;
     left: 2rem;
   }
-  &:hover .tooltiptext {
+  &:hover .tooltip-text {
     visibility: visible;
   }
 }
