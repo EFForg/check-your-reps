@@ -73,3 +73,32 @@ button.tweet-button {
   text-transform: none;
   width: 16rem;
 }
+
+.tooltip {
+  border-bottom: 1px dotted black;
+  color: $orange;
+  display: inline-block;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
+  padding: 0;
+  position: relative;
+
+  .tooltiptext {
+    background-color: $light-gray;
+    border-radius: 6px;
+    color: black;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0.8rem;
+    position: absolute;
+    text-align: left;
+    visibility: hidden;
+    width: 25rem;
+    z-index: 10;
+    top: -5rem;
+    left: 2rem;
+  }
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
+}
