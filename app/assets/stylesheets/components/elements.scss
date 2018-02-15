@@ -2,10 +2,18 @@ input[type="text"] {
   border-radius: 0;
   border: 1px solid black !important;
   color: $dark-gray !important;
-  margin: 1rem auto !important;
+  margin: 0 auto 1rem !important;
   width: 100% !important;
   @include breakpoint(medium) {
-    width: 11rem !important;
+    width: 18rem !important;
+  }
+}
+
+label {
+  margin: 0 auto;
+  width: 100%;
+  @include breakpoint(medium) {
+    width: 18rem !important;
   }
 }
 button,
@@ -102,4 +110,14 @@ button.tweet-button {
   &:hover .tooltip-text {
     visibility: visible;
   }
+}
+
+.error {
+  color: $orange;
+  padding: 0.6rem 1rem;
+  border: 1px solid $orange;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin-bottom: 1.1rem;
 }
