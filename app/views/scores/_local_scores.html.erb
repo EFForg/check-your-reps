@@ -1,10 +1,9 @@
 <% if @scores.empty? %>
-  Sorry, we couldn't find any scores for that address.
+  Sorry, we couldn't find any information for <%= "#{@state}, District #{@district}" %>
 <% else %>
   <h2>Your representatives</h2>
   <div class="your-zip">
-    <%# @todo fill in zip %>
-    California 94609
+    <%= "#{@state}, District #{@district}" %>
   </div>
   <div class="your-reps-grid">
     <% @scores.each do |score| %>

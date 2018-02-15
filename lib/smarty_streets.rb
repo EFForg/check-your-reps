@@ -1,7 +1,9 @@
 require "rest_client"
 
 module SmartyStreets
-  def self.get_congressional_district(street, zipcode)
+  class AddressNotFound < StandardError; end
+
+  def self.get_district(street, zipcode)
     url = "https://api.smartystreets.com/street-address"
     res = post(url, base_params.merge(street: street, zipcode: zipcode))
     if res && res.first
@@ -9,7 +11,7 @@ module SmartyStreets
       district = "0" if district == "AL"
       [res.first["components"]["state_abbreviation"], district]
     else
-      false
+      raise AddressNotFound
     end
   end
 
