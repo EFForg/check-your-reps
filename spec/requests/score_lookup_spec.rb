@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Public access to scores", type: :request do
+describe "Lookup of scores by address", type: :request do
   let(:score) do
     FactoryBot.create(:score, congress_member: FactoryBot.create(:senator,
                                                                  state: "CA"))
@@ -10,7 +10,7 @@ describe "Public access to scores", type: :request do
     { street: "815 Eddy Street", zipcode: "94109" }
   end
 
-  describe "successful score lookup by address" do
+  describe "successful score lookup" do
     before(:each) do
       allow(SmartyStreets).to receive(:get_district).
         with(address[:street], address[:zipcode]).
