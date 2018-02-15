@@ -1,4 +1,8 @@
 class ScoresController < ApplicationController
+  def index
+    @scores = Score.all
+  end
+
   def lookup
     begin
       @state, @district = SmartyStreets.get_district(params[:street], params[:zipcode])
