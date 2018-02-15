@@ -4,19 +4,22 @@
       <% if @scores %>
       <%= render partial: "scores/local_scores" %>
       <% else %>
+      <% if @error %>
+        <div class="error">
+          We didn't recognize the address you entered. Make sure you *only* entered your street address (without your city and state.)
+        </div>
+      <% end %>
       <p>On December 14, 2017, the FCC voted to end net neutrality protections. Net neutrality protections ensured that Internet service providers (ISPs) treated all data that traveled over their networks equally. Now, the way is paved for ISPs to starting blocking or throttling access online and for them to charge extra for data to be transmitted faster.  But Congress can stop it. A majority vote in both houses can overturn the FCC’s order and restore net neutrality.  On TK, the Senate reached 51 votes in favor of repealing the FCC’s order. That means that the future of net neutrality is all in the hands of the House of Representatives.  Tell your representatives how important net neutrality is and, if they haven’t already, to voice their support for bringing back real net neutrality.</p>
       <p>Enter your zip code and see where your rep stands!</p>
       <form action="/scores/lookup" method="get">
         <input type="text" placeholder="Street Address" name="street"></input>
-        <input type="text" placeholder="Zip Code" name="zipcode"></input>
+        <input type="text" placeholder="Zip Code" name="zipcode" pattern="[0-9]{5}" title="Five digit zipcode" required></input>
         <div class="smarty-api-why">
           This tool uses the <%= link_to "Smarty Streets", "http://smartystreets.com/legal/privacy-policy" %>
           API  (        <span data-tooltip aria-haspopup="true"  data-disable-hover="false" tabindex="1" class="tooltip">why?
             <span class="tooltip-text"><p>We need your full address to locate your exact congressional district, but this information isn't stored unless you're logged in.</p><p>We also use the Smarty Streets' API to look up your full 9 digit zip code (Zip+4), since some Congressmember's forms require it.</p></span>
           </span>).
         </div>
-
-
         <input type="submit" value="Look Up">
         <button class="white-button"><%= link_to "See All Reps", "/scorecard" %></button>
       </form>

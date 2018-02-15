@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get "/about", as: :about, to: "about#index"
-  get "/scorecard", as: :scorecard, to: "scorecard#index"
 
-  get "scores/lookup"
+  resources :scores, only: :index do
+    get "lookup", on: :collection
+  end
 end
