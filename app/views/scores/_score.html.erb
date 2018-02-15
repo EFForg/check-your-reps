@@ -1,6 +1,6 @@
 <div class="<%= score.position == "Yes" ? "your-reps-yes" : "your-reps-no" %>">
   <div class="your-rep">
-    <img src="/assets/nancy.svg">
+    <img src="/assets/rep-photos/<%= score.congress_member.bioguide_id %>.jpg">
     <div class="rep-name">
       <%= score.congress_member.name %>
     </div>
