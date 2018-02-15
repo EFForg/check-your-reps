@@ -78,7 +78,7 @@ input[type="submit"],
   }
 }
 
-button.tweet-button {
+.tweet-button {
   background: $orange url('twitter-icon.svg') no-repeat;
   background-position-x: 1rem;
   padding-right: 1.5rem;
@@ -99,6 +99,7 @@ button.tweet-button {
 
   .tooltip-text {
     background-color: $light-gray;
+    border: 1px solid $light-gray;
     border-radius: 6px;
     color: black;
     font-size: 1rem;
@@ -107,10 +108,15 @@ button.tweet-button {
     position: absolute;
     text-align: left;
     visibility: hidden;
-    width: 25rem;
+    width: 15rem;
     z-index: 10;
-    top: -5rem;
-    left: 2rem;
+    top: -21.5rem;
+    left: -7rem;
+    @include breakpoint(medium) {
+      width: 25rem;
+      top: -5rem;
+      left: 2rem;
+    }
   }
   &:hover .tooltip-text {
     visibility: visible;
