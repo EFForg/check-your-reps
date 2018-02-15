@@ -17,7 +17,8 @@ label {
   }
 }
 button,
-input[type="submit"] {
+input[type="submit"],
+.orange-button {
   background-color: $orange;
   border: 1px solid $orange;
   border-radius: rem-calc(7);
@@ -33,6 +34,10 @@ input[type="submit"] {
   width: 100%;
   @include breakpoint(medium) {
     width: 11rem;
+  }
+  a {
+    color: white;
+    text-decoration: none;
   }
 }
 
