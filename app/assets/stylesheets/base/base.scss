@@ -158,7 +158,7 @@ table {
   }
   th {
     background: url("sort-triangles.svg") no-repeat;
-    background-position: 57px center;
+    background-position: 54px center;
     background-size: 9px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -167,7 +167,7 @@ table {
       font-size: 1rem;
     }
     &:first-child {
-      background-position-x: 56px;
+      background-position-x: 54px;
     }
     &:nth-child(3) {
       background-position-x: 76px;
