@@ -54,14 +54,13 @@
       margin: 0 auto;
       text-align: center;
       width: 6rem;
+      span {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
       a {
         color: $green;
         text-decoration: underline;
-      }
-      &:before {
-        content: "CRA position";
-        font-size: 0.9rem;
-        font-weight: 300;
       }
     }
   }

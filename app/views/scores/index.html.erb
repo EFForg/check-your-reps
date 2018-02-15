@@ -13,32 +13,6 @@ Similarly, a “no” is someone who has publically committed to voting against 
           <th></th>
         </thead>
         <tbody>
-<<<<<<< HEAD:app/views/scorecard/index.html.erb
-          <tr>
-            <td>Firstname Lastname</td>
-            <td>CA</td>
-            <td>Y</td>
-            <td><a href="">Tweet</a></td>
-          </tr>
-          <tr>
-            <td>Another Name</td>
-            <td>CA</td>
-            <td>Y</td>
-            <td><a href="">Tweet</a></td>
-          </tr>
-          <tr>
-            <td>Your Lastname</td>
-            <td>MA</td>
-            <td>Y</td>
-            <td><a href="">Tweet</a></td>
-          </tr>
-          <tr>
-            <td>Names Aplenty</td>
-            <td>CA</td>
-            <td>N</td>
-            <td><a href="">Tweet</a></td>
-          </tr>
-=======
           <% @scores.each do |score| %>
             <tr>
               <td><%= score.congress_member.name %></td>
@@ -47,7 +21,6 @@ Similarly, a “no” is someone who has publically committed to voting against 
               <td><a href="">Tweet</a></td>
             </tr>
           <% end %>
->>>>>>> master:app/views/scores/index.html.erb
         </tbody>
       </table>
     </div>
