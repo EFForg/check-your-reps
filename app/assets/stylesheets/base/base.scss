@@ -61,9 +61,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
   @include breakpoint(medium) {
     line-height: 1.7rem;
     margin-bottom: 1rem;
@@ -148,6 +150,52 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  @include breakpoint(medium) {
+    margin: 0 auto;
+  }
+  thead {
+    background: white;
+  }
+  th {
+    background: url("sort-triangles.svg") no-repeat;
+    background-position: 54px center;
+    background-size: 9px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    @include breakpoint(medium) {
+      background-size: 10px;
+      font-size: 1rem;
+    }
+    &:first-child {
+      background-position-x: 54px;
+    }
+    &:nth-child(3) {
+      background-position-x: 76px;
+      @include breakpoint(medium) {
+        background-position-x: 77px;
+      }
+    }
+    &:last-child {
+      background: none;
+    }
+  }
+  td {
+    &:first-child {
+      font-weight: 500;
+    }
+  }
+  tbody th, tbody td {
+    padding: 0.5rem 0.3rem;
+    @include breakpoint(medium) {
+      padding: 0.5rem 0.625rem;
+    }
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color: #F0EFEF;
+  }
+  @include breakpoint(medium) {
+    margin-left: 0;
+  }
 }
 
 

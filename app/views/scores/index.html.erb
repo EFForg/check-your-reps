@@ -1,0 +1,28 @@
+<div class="scorecard">
+  <div class="row align-center">
+    <div class="large-8 medium-10 small-11 columns">
+      <h2>Full List</h2>
+      <p>EFF marks a representative as being a “yes” only if they have publically committed to voting for
+overturning the FCC order, not if they have said something positive about net neutrality in general.
+Similarly, a “no” is someone who has publically committed to voting against the measure.</p>
+      <table id="all-congress-members-table">
+        <thead>
+          <th>Name</th>
+          <th>State</th>
+          <th>CRA</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @scores.each do |score| %>
+            <tr>
+              <td><%= score.congress_member.name %></td>
+              <td><%= score.congress_member.state %></td>
+              <td><%= score.position %></td>
+              <td><a href="">Tweet</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

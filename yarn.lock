@@ -1523,6 +1523,10 @@ table@^4.0.1:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
+tablesort@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/tablesort/-/tablesort-5.0.2.tgz#2c0095db94e85344134c7a04f85eec2bed0c318c"
+
 text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"

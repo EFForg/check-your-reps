@@ -1,11 +1,16 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 #main-content {
   display: inline-block;
   font-size: 1rem;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 1rem;
   padding-bottom: 3rem;
   position: relative;
   width: 100%;
   @include breakpoint(medium) {
     margin: 1rem auto 3rem;
+    position: inherit;
   }
 }

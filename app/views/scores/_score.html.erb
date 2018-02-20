@@ -1,0 +1,14 @@
+<div class="<%= score.position == "Yes" ? "your-reps-yes" : "your-reps-no" %>">
+  <div class="your-rep">
+    <img src="/assets/rep-photos/<%= score.congress_member.bioguide_id %>.jpg">
+    <div class="rep-name">
+      <%= score.congress_member.name %>
+    </div>
+    <div class="position">
+      <span>CRA position</span>
+      <a href="<%= score.source_url %>">
+        <%= score.position %>
+      </a>
+    </div>
+  </div>
+</div>

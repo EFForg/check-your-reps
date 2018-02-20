@@ -1,7 +1,9 @@
 {
   "name": "check-your-reps",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "tablesort": "^5.0.2"
+  },
   "devDependencies": {
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",

@@ -1,4 +1,34 @@
 .homepage {
   display: inline-block;
   width: 100%;
+  .your-zip {
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .your-reps-grid {
+    display: block;
+    margin-bottom: 2rem;
+    @include breakpoint(medium) {
+      display: flex;
+    }
+    .your-reps-yes {
+      @include your-reps-block;
+    }
+    .your-reps-no {
+      @include your-reps-block;
+      img {
+        border-bottom: 15px solid $eff-red;
+      }
+      .your-rep .position a {
+        color: $eff-red;
+      }
+    }
+  }
+  .smarty-api-why {
+    text-align: center;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    margin-top: -0.5rem;
+  }
 }

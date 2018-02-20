@@ -1,9 +1,10 @@
 ActiveAdmin.register Score do
-  permit_params :position, :source_url, :rep_id
+  permit_params :position, :source_url, :congress_member_id
 
   form do |f|
     f.inputs do
-      input :rep_id, as: :select, collection: Rep.current.without_scores
+      input :congress_member_id, as: :select,
+                                 collection: CongressMember.current.without_scores
       input :position
       input :source_url
     end

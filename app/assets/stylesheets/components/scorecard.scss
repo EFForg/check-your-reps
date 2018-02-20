@@ -1,0 +1,41 @@
+.scorecard {
+  table {
+    th {
+      &:first-child {
+        background-position-x: 55px;
+        width: 105px;
+        @include breakpoint(medium) {
+          width: auto;
+        }
+      }
+      &:nth-child(3) {
+        background-position-x: 44px;
+      }
+      &:last-child {
+        width: 30px;
+        @include breakpoint(medium) {
+          width: auto;
+        }
+      }
+    }
+    td {
+      &:first-child,
+      &:last-child {
+        font-weight: 500;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        text-align: center;
+        @include breakpoint(medium) {
+          text-align: left;
+        }
+      }
+      &:last-child {
+        font-size: 0.9rem;
+        @include breakpoint(medium) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
