@@ -55,15 +55,15 @@ $social-link-text-width: 12.5rem;
     }
 
     &.share-twitter i {
-      background: url("twitter-icon.svg");
+      background: image-url("twitter-icon.svg");
     }
 
     &.share-facebook i {
-      background: url("fb-icon.svg");
+      background: image-url("fb-icon.svg");
     }
 
     &.share-google i {
-      background: url("google-icon.svg");
+      background: image-url("google-icon.svg");
     }
   }
 }
