@@ -10,4 +10,19 @@
       <%= render score, locals: { score: score } %>
     <% end %>
   </div>
+
+  <script type="text/javascript" src="http://act.eff.org/action/embed"></script>
+
+  <script type="text/javascript">
+      var ac_embed = {};
+      ac_embed.css_content = "#ac_embed_styles";
+  </script>
+
+  <script id="ac_embed_styles" type="text/x-css-content">
+    body {
+      background-color: red;
+    }
+  </script>
+
+  <a class="action-center-widget" href="http://act.eff.org/action/tell-law-enforcement-come-back-with-a-warrant">Take part in the action!</a>
 <% end %>
