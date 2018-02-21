@@ -1,10 +1,23 @@
 version: '2.1'
 services:
-  db:
-    image: postgres
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
     env_file: .env
     ports:
-      - 127.0.0.1:5432:5432
-
+      - 127.0.0.1:3000:3000
+  db:
+    image: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+    env_file: .env
+volumes:
+  pgdata:

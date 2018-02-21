@@ -2,7 +2,6 @@
   "name": "check-your-reps",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.2.1",
     "tablesort": "^5.0.2"
   },
   "devDependencies": {
@@ -11,7 +10,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "sass-lint": "^1.12.1",
-    "webpack-dev-server": "^2.11.1"
+    "sass-lint": "^1.12.1"
   }
 }
