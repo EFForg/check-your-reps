@@ -1,28 +1,73 @@
 <% if @scores.empty? %>
-  Sorry, we couldn't find any information for <%= full_district(@state, @district) %>
+Sorry, we couldn't find any information for <%= full_district(@state, @district) %>
 <% else %>
-  <h2>Your representatives</h2>
-  <div class="your-zip">
-    <%= full_district(@state, @district) %>
-  </div>
-  <div class="your-reps-grid">
-    <% @scores.each do |score| %>
-      <%= render score, locals: { score: score } %>
-    <% end %>
-  </div>
+<h2>Your representatives</h2>
+<div class="your-zip">
+  <%= full_district(@state, @district) %>
+</div>
+<div class="your-reps-grid">
+  <% @scores.each do |score| %>
+  <%= render score, locals: { score: score } %>
+  <% end %>
+</div>
 
-  <script type="text/javascript" src="http://act.eff.org/action/embed"></script>
+<script type="text/javascript" src="http://act.eff.org/action/embed"></script>
 
-  <script type="text/javascript">
-      var ac_embed = {};
-      ac_embed.css_content = "#ac_embed_styles";
-  </script>
+<script type="text/javascript">
+var ac_embed = {};
+ac_embed.css_content = "#ac_embed_styles";
+</script>
 
-  <script id="ac_embed_styles" type="text/x-css-content">
-    body {
-      background-color: red;
-    }
-  </script>
+<script id="ac_embed_styles" type="text/x-css-content">
 
-  <a class="action-center-widget" href="http://act.eff.org/action/tell-law-enforcement-come-back-with-a-warrant">Take part in the action!</a>
+body.action_page-embed_iframe {
+  font-family: 'Rubik', sans-serif;
+}
+body.action_page-embed_iframe #tools .tool {
+  border: 1px solid #C9501D !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.action_page-embed_iframe #tools .tool .tool-container {
+  padding: 0;
+}
+body.action_page-embed_iframe
+#tools #congress-message-tool .tool-title {
+  background:#C9501D;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+body.action_page-embed_iframe #tools #congress-message-tool h3 {
+  color: black;
+}
+
+body.action_page-embed_iframe a {
+  color: #C9501D;
+}
+body.action_page-embed_iframe #tools #congress-message-tool h3 span.customize-message-popover,
+body.action_page-embed_iframe h3.privacy-notice-header span.privacy-notice-popover {
+  border: 1px solid #C9501D;
+  color: #C9501D;
+}
+body.action_page-embed_iframe #tools #congress-message-tool h3 span.customize-message-popover:hover,
+body.action_page-embed_iframe h3.privacy-notice-header span.privacy-notice-popover:hover {
+  background: #C9501D;
+  color: white;
+}
+
+body.action_page-embed_iframe  input.btn.btn-default.action {
+  background-color: #C9501D !important;
+  display: block;
+  font-weight: 900 !important;
+  margin: 0 auto;
+  width: 55% !important;
+}
+
+</script>
+
+<a class="action-center-widget" href="http://act.eff.org/action/tell-law-enforcement-come-back-with-a-warrant">Take part in the action!</a>
 <% end %>
