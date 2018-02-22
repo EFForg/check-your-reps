@@ -26,10 +26,13 @@
     }
   }
   .smarty-api-why {
-    text-align: center;
     font-size: 0.6rem;
     line-height: 0.6rem;
-    margin-top: -0.5rem;
+    margin: -0.5rem auto 2rem;
+    width: 100%;
+    @include breakpoint(medium) {
+      width: 18rem;
+    }
   }
   iframe {
     display: block;
