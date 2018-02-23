@@ -12,4 +12,9 @@ class CongressMember < ApplicationRecord
   def self.lookup(state, district)
     current.where(state: state).where("chamber = ? OR district = ?", "senate", district)
   end
+
+  def twitter_handle
+    return name unless twitter_id
+    twitter_id[0] == '@' ? twitter_id : "@#{twitter_id}"
+  end
 end

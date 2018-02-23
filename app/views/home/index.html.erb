@@ -21,6 +21,7 @@
             <label for="zipcode" id="zipcode-label">Zip Code</label>
             <input type="text" name="zipcode" id="zipcode" pattern="[0-9]{5}" title="Five digit zipcode" required></input>
           </div>
+
         </div>
         <div class="smarty-api-why">
           This tool uses the <%= link_to "Smarty Streets", "http://smartystreets.com/legal/privacy-policy" %> API  (<span data-tooltip aria-haspopup="true"  data-disable-hover="false" tabindex="1" class="tooltip">why?
@@ -31,7 +32,6 @@
         <input type="submit" value="Look Up">
       </form>
       <div class="white-button"><%= link_to "See All Reps", "/scores" %></div>
-      <button class="tweet-button">Tweet to Your Followers</button>
       <% end %>
     </div>
   </div>

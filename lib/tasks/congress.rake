@@ -7,6 +7,10 @@ namespace :congress do
         "https://raw.githubusercontent.com/unitedstates/congress-legislators/master/legislators-historical.yaml"
       ]
 
+    social_media = RestClient.get(
+      "https://raw.githubusercontent.com/unitedstates/congress-legislators/master/legislators-social-media.yaml"
+    )
+
     legislator_sources.each do |repo|
       data = RestClient.get(repo)
       YAML.load(data).each do |info|
@@ -27,6 +31,13 @@ namespace :congress do
         CongressMember.
           find_or_initialize_by(bioguide_id: info["id"]["bioguide"]).
           update_attributes!(attributes)
+      end
+
+      YAML.load(social_media).each do |info|
+        next unless twitter_id = info["social"]["twitter"]
+        CongressMember.
+          where(bioguide_id: info["id"]["bioguide"]).
+          update_all(twitter_id: twitter_id)
       end
     end
   end
