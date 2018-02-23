@@ -26,4 +26,25 @@ RSpec.describe CongressMember, type: :model do
         and be_empty
     end
   end
+
+  describe 'twitter_handle' do
+    let(:bob) { FactoryBot.create(:congress_member, twitter_id: id) }
+    let(:useful_handle) { '@bob' }
+
+    context 'when twitter_id can be parsed' do
+      let(:id) { useful_handle }
+
+      it 'returns a useful handle' do
+        expect(bob.twitter_handle).to eq(useful_handle)
+      end
+    end
+
+    context 'when twitter_id is missing an @' do
+      let(:id) { 'bob' }
+
+      it 'returns a useful handle' do
+        expect(bob.twitter_handle).to eq(useful_handle)
+      end
+    end
+  end
 end
