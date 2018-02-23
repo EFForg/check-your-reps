@@ -1,0 +1,73 @@
+body.action_page-embed_iframe {
+  font-family: 'Rubik', sans-serif;
+}
+body.action_page-embed_iframe #tools .tool {
+  border: 1px solid #C9501D !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.action_page-embed_iframe #tools .tool .tool-container {
+  padding: 0;
+}
+body.action_page-embed_iframe
+#tools #congress-message-tool .tool-title {
+  background: #C9501D;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+body.action_page-embed_iframe #tools #congress-message-tool h3 {
+  color: black;
+}
+
+body.action_page-embed_iframe a {
+  color: #C9501D;
+}
+body.action_page-embed_iframe #tools #congress-message-tool h3 span.customize-message-popover,
+body.action_page-embed_iframe h3.privacy-notice-header span.privacy-notice-popover {
+  border: 1px solid #C9501D;
+  color: #C9501D;
+}
+body.action_page-embed_iframe #tools #congress-message-tool h3 span.customize-message-popover:hover,
+body.action_page-embed_iframe h3.privacy-notice-header span.privacy-notice-popover:hover {
+  background: #C9501D;
+  color: white;
+}
+
+body.action_page-embed_iframe  input.btn.btn-default.action {
+  background-color: #C9501D !important;
+  display: block;
+  font-weight: 900 !important;
+  margin: 0 auto;
+  width: 55% !important;
+}
+
+body.action_page-embed_iframe  input.btn.action {
+  background-color: #C9501D !important;
+  display: block;
+  font-weight: 900 !important;
+  margin: 0 auto;
+  width: 55% !important;
+}
+
+body.action_page-embed_iframe .progress-bar-danger {
+  background-color: #C9501D !important;
+}
+
+body.action_page-embed_iframe
+span.info-circle.success {
+  color: #688E26 !important;
+  border-color: white !important;
+  background-color: white !important;
+}
+
+body.action_page-embed_iframe .vertical-share a {
+  color: white !important;
+}
+
+body.action_page-embed_iframe #tools #congress-message-tool h3::before {
+  border-bottom: none !important;
+}
