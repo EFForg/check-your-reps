@@ -2,9 +2,9 @@
   <div class="row align-center">
     <div class="large-7 medium-9 small-11 columns">
       <% if @scores %>
-      <%= render partial: "scores/local_scores" %>
+        <%= render partial: "scores/local_scores" %>
       <% else %>
-      <% if @error %>
+        <% if @error %>
       <div class="error">
         We didn't recognize the address you entered. Make sure you *only* entered your street address (without your city and state.)
       </div>
