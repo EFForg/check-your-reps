@@ -71,9 +71,17 @@ body.action_page-embed_iframe {
     color: $green !important;
     border-color: white !important;
     background-color: white !important;
+    top: -14px !important;
   }
 
   .vertical-share a {
     color: white !important;
+  }
+
+  body.action_page-embed_iframe .facebook-button {
+    display: none;
+  }
+  body.action_page-embed_iframe .google-button {
+    display: none;
   }
 }
