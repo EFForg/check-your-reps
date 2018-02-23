@@ -17,7 +17,7 @@ describe TweetHelper do
   end
 
   describe '#tweet_message' do
-    let(:position) { 'anything besides yes or no' }
+    let(:position) { Score::DEFAULT_POSITION }
     let(:handle) { '@RepRaptor' }
     let(:score) { FactoryBot.create(:score, position: position) }
     let(:website) { 'https://checkyourreps.org' }

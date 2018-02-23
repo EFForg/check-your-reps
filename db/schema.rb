@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222203922) do
+ActiveRecord::Schema.define(version: 20180223012332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180222203922) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.string "position"
+    t.string "position", default: "Uncommitted"
     t.string "source_url"
     t.bigint "congress_member_id"
     t.index ["congress_member_id"], name: "index_scores_on_congress_member_id"
