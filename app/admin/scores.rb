@@ -3,9 +3,15 @@ ActiveAdmin.register Score do
 
   form do |f|
     f.inputs do
-      input :congress_member_id, as: :select,
-                                 collection: CongressMember.current.without_scores
-      input :position
+      input :congress_member_id,
+        as: :select,
+        collection: CongressMember.current.without_scores,
+        include_blank: false
+      input :position,
+        as: :select,
+        collection: Score::POSITIONS,
+        default: Score::DEFAULT_POSITION,
+        include_blank: false
       input :source_url
     end
 
