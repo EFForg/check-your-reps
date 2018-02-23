@@ -1,0 +1,4 @@
+var ac_embed = {
+  css: "<%= stylesheet_url "action_center_embed" %>",
+  bioguide_ids: <%= @scores.map{ |s| s.congress_member.bioguide_id }.to_json.html_safe %>
+};

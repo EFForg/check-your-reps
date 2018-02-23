@@ -11,18 +11,10 @@
     <% end %>
   </div>
 
-  <script type="text/javascript" src="http://act.eff.org/action/embed"></script>
-
   <script type="text/javascript">
-      var ac_embed = {};
-      ac_embed.css = "<%= stylesheet_path "action_center_embed" %>";
+    <%= render "ac_embed.js" %>
   </script>
+  <%= javascript_include_tag "https://act.eff.org/action/embed" %>
 
-  <script id="ac_embed_styles" type="text/x-css-content">
-    body {
-      background-color: red;
-    }
-  </script>
-
-  <a class="action-center-widget" href="http://act.eff.org/action/tell-law-enforcement-come-back-with-a-warrant">Take part in the action!</a>
+  <a class="action-center-widget" href="https://act.eff.org/action/check-your-reps-tell-congress-to-save-the-open-internet-4ba1e32b-331c-4f40-acdf-717dd0a9f01e">Take part in the action!</a>
 <% end %>
