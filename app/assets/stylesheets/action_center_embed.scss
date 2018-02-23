@@ -1,0 +1,79 @@
+@import "variables/colors";
+
+body.action_page-embed_iframe {
+  font-family: 'Rubik', sans-serif;
+
+  a {
+    color: #C9501D;
+  }
+
+  #tools {
+    .tool {
+      border: 1px solid #C9501D !important;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .tool .tool-container {
+      padding: 0;
+    }
+
+    #congress-message-tool .tool-title {
+      background: $orange;
+      color: white;
+      font-weight: 600;
+      padding: 1rem;
+      text-transform: uppercase;
+    }
+
+    #congress-message-tool h3::before {
+      border-bottom: none !important;
+    }
+
+    #congress-message-tool h3 {
+      color: black;
+    }
+  }
+
+  #tools #congress-message-tool h3 span.customize-message-popover,
+  h3.privacy-notice-header span.privacy-notice-popover {
+    border: 1px solid $orange;
+    color: $orange;
+  }
+  #tools #congress-message-tool h3 span.customize-message-popover:hover,
+  h3.privacy-notice-header span.privacy-notice-popover:hover {
+    background: $orange;
+    color: white;
+  }
+
+  input.btn.btn-default.action {
+    background-color: $orange !important;
+    display: block;
+    font-weight: 900 !important;
+    margin: 0 auto;
+    width: 55% !important;
+  }
+
+  input.btn.action {
+    background-color: $orange !important;
+    display: block;
+    font-weight: 900 !important;
+    margin: 0 auto;
+    width: 55% !important;
+  }
+
+  .progress-bar-danger {
+    background-color: $orange;
+  }
+
+
+  span.info-circle.success {
+    color: $green !important;
+    border-color: white !important;
+    background-color: white !important;
+  }
+
+  .vertical-share a {
+    color: white !important;
+  }
+}
