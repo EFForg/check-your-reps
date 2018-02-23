@@ -16,7 +16,7 @@ header {
   padding-bottom: 1rem;
   @include breakpoint(medium) {
     margin-bottom: 3rem;
-    padding-bottom: 1.7rem;
+    padding: 1rem 0 1.7rem;
   }
   .project-of {
     color: white;
