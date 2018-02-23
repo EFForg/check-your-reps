@@ -1,21 +1,44 @@
+.input-fields {
+  @include breakpoint(medium) {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    .street {
+      flex: 2 1 auto;
+      width: 75%;
+    }
+    .zip {
+      flex: 0 1 auto;
+      margin-left: 1%;
+      width: 25%;
+    }
+  }
+}
 input[type="text"] {
   border-radius: 0;
   border: 1px solid black !important;
   color: $charcoal !important;
+  float: left;
   margin: 0 auto 1rem !important;
   width: 100% !important;
-  @include breakpoint(medium) {
-    width: 18rem !important;
-  }
 }
 
+
 label {
+  float: left;
   margin: 0 auto;
   width: 100%;
   @include breakpoint(medium) {
     width: 18rem !important;
   }
 }
+
+label#zipcode-label {
+  @include breakpoint(medium) {
+    width: 4rem;
+  }
+}
+
 button,
 input[type="submit"],
 .orange-button {
