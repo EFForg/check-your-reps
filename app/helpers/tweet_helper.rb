@@ -6,7 +6,7 @@ module TweetHelper
       related: Rails.application.config.twitter_related.to_a.join(',')
    }.to_query
 
-   link_to 'Tweet', url, target: "_blank"
+   link_to 'Tweet', url, { target: "_blank", rel: "noopener noreferrer" }
  end
 
   def tweet_message(score)
