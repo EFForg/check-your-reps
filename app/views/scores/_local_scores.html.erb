@@ -10,4 +10,11 @@
       <%= render score, locals: { score: score } %>
     <% end %>
   </div>
+
+  <script type="text/javascript">
+    <%= render "ac_embed.js" %>
+  </script>
+  <%= javascript_include_tag "https://act.eff.org/action/embed" %>
+
+  <a class="action-center-widget" href="https://act.eff.org/action/check-your-reps-tell-congress-to-save-the-open-internet-4ba1e32b-331c-4f40-acdf-717dd0a9f01e">Take part in the action!</a>
 <% end %>
