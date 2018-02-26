@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 desc "Run all tests (rspec, rubocop, eslint, sass-lint)"
 task :test do
   exit [

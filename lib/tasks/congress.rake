@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 namespace :congress do
   desc "Create/update records of Congress members"
   task update: :environment do
