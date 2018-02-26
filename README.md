@@ -27,3 +27,10 @@ You should now be able to login with the default admin credentials:
 * Password: password
 
 You can run all tests and linters with `rake test`.
+
+## Managing scores
+
+1. Visit checkyourreps.org/admin and enter your username and password.
+2. In the top navigation bar, click "Scores".
+3. To add a new score, click "New Score" in the top righthand corner.
+4. To edit an existing score, find it in the list of scores, hover over the three dots on the righthand side, and click "edit".
