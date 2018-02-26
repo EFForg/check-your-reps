@@ -5,7 +5,7 @@ ActiveAdmin.register Score do
     f.inputs do
       input :congress_member_id,
         as: :select,
-        collection: CongressMember.current.without_scores,
+        collection: (object.persisted? ? CongressMember.current : CongressMember.current.without_scores),
         include_blank: false
       input :position,
         as: :select,
