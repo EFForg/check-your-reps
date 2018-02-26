@@ -1,4 +1,4 @@
-<div class="<%= score.position == "Yes" ? "your-reps-yes" : "your-reps-no" %>">
+<div class="your-reps-<%= score.position.parameterize %>">
   <div class="your-rep">
     <%= congress_member_photo score.congress_member %>
     <div class="rep-name">
