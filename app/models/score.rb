@@ -10,6 +10,14 @@ class Score < ApplicationRecord
     update_attribute(:position, DEFAULT_POSITION) unless POSITIONS.include?(position)
   end
 
+  def display_position
+    if position == DEFAULT_POSITION
+      "N/A"
+    else
+      position
+    end
+  end
+
   def self.lookup(state, district)
     all.includes(:congress_member).merge(CongressMember.lookup(state, district))
                                   .references(:congress_members)
