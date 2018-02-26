@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CongressMember < ApplicationRecord
   has_one :score, dependent: :destroy
   accepts_nested_attributes_for :score
@@ -15,6 +16,6 @@ class CongressMember < ApplicationRecord
 
   def twitter_handle
     return name unless twitter_id
-    twitter_id[0] == '@' ? twitter_id : "@#{twitter_id}"
+    twitter_id[0] == "@" ? twitter_id : "@#{twitter_id}"
   end
 end

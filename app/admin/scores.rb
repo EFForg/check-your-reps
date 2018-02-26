@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ActiveAdmin.register Score do
   permit_params :position, :source_url, :congress_member_id
 
