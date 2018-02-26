@@ -17,11 +17,7 @@
   <%= render "layouts/header" %>
   <div id="main-content">
     <%= yield %>
-    <div class="share-links">
-      <a class="share-twitter" href="" target="_blank" title="Share on Twitter"><span>Share on Twitter</span><i></i></a>
-      <a class="share-facebook" href="" target="_blank" title="Share on Facebook"><span>Share on Facebook</span><i></i></a>
-      <a class="share-google" href="" title="Share on Google+"><span>Share on Google+</span><i></i></a>
-    </div>
+    <%= render "shared/share_links" %>
   </div>
   <%= render "layouts/footer" %>
 </body>
