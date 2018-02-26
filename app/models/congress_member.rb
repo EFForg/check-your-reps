@@ -18,4 +18,13 @@ class CongressMember < ApplicationRecord
     return name unless twitter_id
     twitter_id[0] == "@" ? twitter_id : "@#{twitter_id}"
   end
+
+  def name_with_title
+    if chamber == "senate"
+      title = "Sen."
+    else
+      title = "Rep."
+    end
+    "#{title} #{name}"
+  end
 end
