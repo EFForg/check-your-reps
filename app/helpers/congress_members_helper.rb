@@ -3,7 +3,12 @@ module CongressMembersHelper
   def congress_member_photo(member)
     image_tag "rep-photos/#{member.bioguide_id}.jpg"
   end
-  def congress_member_chamber(member)
-    "#{member.chamber}"
+  def name_with_title
+    if chamber == "senate"
+      title = "Sen."
+    else
+      title = "Rep."
+    end
+    "#{title} #{name}"
   end
 end
