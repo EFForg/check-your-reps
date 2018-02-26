@@ -1,4 +1,4 @@
-<div class="<%= score.position == "Yes" ? "your-reps-yes" : "your-reps-no" %>">
+<div class="your-reps-<%= score.position.parameterize %>">
   <div class="your-rep">
     <%= congress_member_photo score.congress_member %>
     <div class="rep-name">
@@ -6,8 +6,8 @@
     </div>
     <div class="position">
       <span>CRA position</span>
-      <a href="<%= score.source_url %>">
-        <%= score.position %>
+      <a href="<%= score.source_url %>" target="_blank" rel="noopener noreferrer">
+        <%= score.display_position %>
       </a>
     </div>
   </div>

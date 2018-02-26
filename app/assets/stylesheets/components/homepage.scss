@@ -24,6 +24,15 @@
         color: $eff-red;
       }
     }
+    .your-reps-uncommitted {
+      @include your-reps-block;
+      img {
+        border-bottom: 15px solid $uncommitted;
+      }
+      .your-rep .position a {
+        color: $uncommitted;
+      }
+    }
   }
   .smarty-api-why {
     font-size: 0.6rem;
