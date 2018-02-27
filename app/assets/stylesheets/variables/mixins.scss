@@ -66,3 +66,31 @@
     }
   }
 }
+
+@mixin buttons {
+  background-color: $orange;
+  border: 1px solid $orange;
+  border-radius: rem-calc(7);
+  clear: left;
+  color: white;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  width: 100%;
+  &:hover,
+  &:focus {
+    background-color: darken( $orange, 10% );
+    border-color: darken( $orange, 10% );
+  }
+  @include breakpoint(medium) {
+    width: 11rem;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
