@@ -30,6 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  site_title: "Check Your Reps: Who Is Standing Up for Net Neutrality?"
+  site_summary: "In December, the FCC voted to roll back net neutrality protections, giving Internet service providers free reign to engage in unfair and discriminatory data practices. But it's not too late: Congress can overturn the FCC's new rule. Tell your representatives to bring them back."
   tweet:
     message:
       generic: "I support a free and open Internet by protecting net neutrality. Do you know where your representatives stand? https://checkyourreps.org"
