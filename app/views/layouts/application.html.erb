@@ -24,10 +24,10 @@
 
   <div id="anon-stats">
     <noscript>
-      <img src="https://anon-stats.eff.org/js/?idsite=29&amp;rec=1" style="border:0" alt="" />
+      <%= tracking_image(29) %>
     </noscript>
     <script type="text/javascript">
-      const image = '<%= js_tracking_image(29) %>';
+      const image = '<%= tracking_image(29, js: true) %>';
       const referrer = encodeURIComponent(document.referrer);
       document.getElementById('anon-stats')
               .innerHTML = image.replace('REFERRER', referrer);

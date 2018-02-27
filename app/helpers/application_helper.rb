@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 module ApplicationHelper
-  def js_tracking_image(piwik_id)
-    url = "https://anon-stats.eff.org/js?" + {
+  def tracking_image(piwik_id, js: false)
+    base_url = "https://anon-stats.eff.org/js?"
+    params = {
       idsite: piwik_id,
       rec: 1,
-      urlref: "REFERRER"
-    }.to_query
-    image_tag(url, style: "border:0", alt: "")
+    }
+    params[:urlref] = "REFERRER" if js
+    image_tag(base_url + params.to_query, style: "border:0", alt: "")
   end
 end
