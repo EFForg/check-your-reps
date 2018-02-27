@@ -124,6 +124,7 @@ input[type="submit"],
     border: 1px solid $light-gray;
     border-radius: 6px;
     color: black;
+    display: none;
     font-size: 1rem;
     line-height: 1rem;
     padding: 0.8rem;
@@ -141,6 +142,7 @@ input[type="submit"],
     }
   }
   &:hover .tooltip-text {
+    display: block;
     visibility: visible;
   }
 }
