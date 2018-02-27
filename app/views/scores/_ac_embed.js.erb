@@ -1,4 +1,5 @@
 var ac_embed = {
   css: "<%= stylesheet_url "action_center_embed" %>",
-  bioguide_ids: <%= @scores.map{ |s| s.congress_member.bioguide_id }.to_json.html_safe %>
+  bioguide_ids: <%= json_escape(@scores.map{ |s| s.congress_member.bioguide_id }.to_json.html_safe) %>,
+  location: <%= json_escape(@location.to_json.html_safe) %>
 };
