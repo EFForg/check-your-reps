@@ -18,8 +18,8 @@ describe "Lookup of scores by address", type: :request do
   it "shows all scores" do
     cell_content = body.search('td').map(&:text)
 
-    expect(cell_content).to include("T-Rex")
-    expect(cell_content).to include("Brontosaurus")
+    expect(cell_content).to include("Sen. T-Rex")
+    expect(cell_content).to include("Sen. Brontosaurus")
   end
 
   it 'contains tweet input for each congress member' do
