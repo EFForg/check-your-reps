@@ -20,5 +20,15 @@
     <%= render "shared/share_links" %>
   </div>
   <%= render "layouts/footer" %>
+
+
+  <div id="anon-stats">
+    <noscript>
+      <img src="https://anon-stats.eff.org/js/?idsite=29&amp;rec=1" style="border:0" alt="" />
+    </noscript>
+    <script type="text/javascript">
+      document.getElementById('anon-stats').innerHTML = '<img src="https://anon-stats.eff.org/js/?idsite=29&amp;rec=1&amp;urlref='+encodeURIComponent(document.referrer)+' style="border:0" alt="" />';
+    </script>
+  </div>
 </body>
 </html>
