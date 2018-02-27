@@ -12,6 +12,9 @@ gem "pg", "~> 0.18"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.4"
 
+# Error reporting
+gem "sentry-raven"
+
 # Use SCSS for stylesheets
 gem "foundation-rails", ">= 6" # Use Foundation for grids and other styles
 gem "sass-rails", "~> 5.0"
