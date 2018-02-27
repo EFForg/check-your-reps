@@ -109,6 +109,10 @@ input[type="submit"],
   width: 16rem;
 }
 
+// Foundation's tooltips don't work without a JS library,
+// so this replicates the tooltip functionality.
+//
+// It's got some problems, and at some point we'll probably want to use Foundation's.
 .tooltip {
   border-bottom: 1px dotted black;
   color: $orange;
@@ -130,7 +134,6 @@ input[type="submit"],
     padding: 0.8rem;
     position: absolute;
     text-align: left;
-    visibility: hidden;
     width: 15rem;
     z-index: 10;
     top: -21.5rem;
@@ -143,7 +146,6 @@ input[type="submit"],
   }
   &:hover .tooltip-text {
     display: block;
-    visibility: visible;
   }
 }
 
