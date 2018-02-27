@@ -27,7 +27,10 @@
       <img src="https://anon-stats.eff.org/js/?idsite=29&amp;rec=1" style="border:0" alt="" />
     </noscript>
     <script type="text/javascript">
-      document.getElementById('anon-stats').innerHTML = '<img src="https://anon-stats.eff.org/js/?idsite=29&amp;rec=1&amp;urlref='+encodeURIComponent(document.referrer)+' style="border:0" alt="" />';
+      const image = '<%= js_tracking_image(29) %>';
+      const referrer = encodeURIComponent(document.referrer);
+      document.getElementById('anon-stats')
+              .innerHTML = image.replace('REFERRER', referrer);
     </script>
   </div>
 </body>
