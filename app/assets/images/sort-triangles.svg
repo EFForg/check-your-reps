@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-587.356 -234.799 15.688 19.873">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1134.644 3963.201 15.688 19.873">
   <defs>
     <style>
       .cls-1 {
-        fill: #c9501d;
+        fill: #e64400;
       }
     </style>
   </defs>
-  <g id="Group_175" data-name="Group 175" transform="translate(-1189 -813)">
+  <g id="Group_180" data-name="Group 180" transform="translate(533 3385)">
     <path id="triangle_up" data-name="triangle up" class="cls-1" d="M2740.644,242.134l7.874-7.873,7.813,7.873Z" transform="translate(-2139 343.94)"/>
     <path id="triangle_down" data-name="triangle down" class="cls-1" d="M2740.644,242.134l7.874-7.873,7.813,7.873Z" transform="translate(3357.975 832.335) rotate(-180)"/>
   </g>

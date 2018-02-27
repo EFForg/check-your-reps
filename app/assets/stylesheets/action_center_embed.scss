@@ -4,7 +4,7 @@ body.action_page-embed_iframe {
   font-family: 'Rubik', sans-serif;
 
   a {
-    color: #C9501D;
+    color: $orange;
   }
   .container {
     @media all and (max-width: 640px) {
@@ -12,11 +12,10 @@ body.action_page-embed_iframe {
       .tools-wrapper {
         padding: 0 1% !important;
       }
-    }
 
     #tools {
       .tool {
-        border: 1px solid #C9501D !important;
+        border: 1px solid $orange !important;
         border-radius: 0;
         box-shadow: none;
       }
