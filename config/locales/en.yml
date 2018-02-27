@@ -34,6 +34,7 @@ en:
   site_summary: "In December, the FCC voted to roll back net neutrality protections, giving Internet service providers free reign to engage in unfair and discriminatory data practices. But it's not too late: Congress can overturn the FCC's new rule. Tell your representatives to bring them back."
   tweet:
     message:
+      generic: "I support a free and open Internet by protecting net neutrality. Do you know where your representatives stand? https://checkyourreps.org"
       for: "I'm glad to see %{handle} has committed to repealing the FCC's order and restoring #NetNeutrality."
       against: "Even though 83% of Americans support #NetNeutrality, %{handle} doesn't support it and won't vote to overrule the FCC."
       undecided: "Why hasn't %{handle} taken a stand on protecting #NetNeutrality by repealing the FCC's order?  I'd like to see a commitment to vote for saving the neutral net."
