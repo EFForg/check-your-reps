@@ -161,19 +161,15 @@ table {
     background-position: 54px center;
     background-size: 9px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
     @include breakpoint(medium) {
       background-size: 10px;
-      font-size: 1rem;
     }
     &:first-child {
       background-position-x: 54px;
     }
     &:nth-child(3) {
-      background-position-x: 76px;
-      @include breakpoint(medium) {
-        background-position-x: 77px;
-      }
+      background-position-x: 45px;
     }
     &:last-child {
       background: none;
