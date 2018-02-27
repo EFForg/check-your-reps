@@ -11,18 +11,12 @@ describe "Lookup of scores by address", type: :request do
   end
 
   describe "successful score lookup" do
-    before(:each) do
-      allow(SmartyStreets).to receive(:get_district).
-        with(address[:street], address[:zipcode]).
-        and_return([ "CA", "14" ])
-    end
-
     before(:each) { score }
 
     before(:each) do
       allow(SmartyStreets).to receive(:get_district).
         with(address[:street], address[:zipcode]).
-        and_return([ "CA", "14" ])
+        and_return({ state: "CA", district: "14" })
     end
 
     it "shows the user's state and district" do
@@ -54,7 +48,7 @@ describe "Lookup of scores by address", type: :request do
     it "shows an error when the address isn't recognized" do
       allow(SmartyStreets).to receive(:get_district).
         with(address[:street], address[:zipcode]).
-        and_return([ "CA", "14" ])
+        and_return({ state: "CA", district: "14" })
 
       get "/scores/lookup", params: address
       expect(response.body).to include("couldn't find any information for")
