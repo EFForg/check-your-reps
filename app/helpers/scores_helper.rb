@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module ScoresHelper
-  def full_district(state, district)
-    "#{us_states_hash[state]} District #{district}"
+  def full_district(location)
+    "#{us_states_hash[location[:state]]} District #{location[:district]}"
   end
 
   def us_states_hash

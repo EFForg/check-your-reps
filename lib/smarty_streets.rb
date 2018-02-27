@@ -7,10 +7,15 @@ module SmartyStreets
   def self.get_district(street, zipcode)
     url = "https://api.smartystreets.com/street-address"
     res = post(url, base_params.merge(street: street, zipcode: zipcode))
-    if res && res.first
+    if res && res.first && res.first["components"]
       district = res.first.dig("metadata", "congressional_district")
       district = "0" if district == "AL"
-      [res.first["components"]["state_abbreviation"], district]
+      {
+        state: res.first["components"]["state_abbreviation"],
+        district: district,
+        city: res.first["components"]["city_name"],
+        zip4: res.first["components"]["plus4_code"]
+      }
     else
       raise AddressNotFound
     end

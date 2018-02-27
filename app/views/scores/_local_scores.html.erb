@@ -1,9 +1,9 @@
 <% if @scores.empty? %>
-  Sorry, we couldn't find any information for <%= full_district(@state, @district) %>
+  Sorry, we couldn't find any information for <%= full_district(@location) %>
 <% else %>
   <h2>Your representatives</h2>
   <div class="your-zip">
-    <%= full_district(@state, @district) %>
+    <%= full_district(@location) %>
   </div>
   <div class="your-reps-grid">
     <% @scores.each do |score| %>

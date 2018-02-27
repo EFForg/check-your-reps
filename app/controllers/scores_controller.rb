@@ -6,8 +6,10 @@ class ScoresController < ApplicationController
 
   def lookup
     begin
-      @state, @district = SmartyStreets.get_district(params[:street], params[:zipcode])
-      @scores = Score.lookup(@state, @district)
+      @location = params.permit(:street, :zipcode).merge(
+        SmartyStreets.get_district(params[:street], params[:zipcode])
+      )
+      @scores = Score.lookup(@location[:state], @location[:district])
     rescue SmartyStreets::AddressNotFound => e
       @error = :address_not_found
     end
