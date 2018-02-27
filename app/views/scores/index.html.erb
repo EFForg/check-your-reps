@@ -15,7 +15,7 @@ Similarly, a “no” is someone who has publically committed to voting against 
         <tbody>
           <% @scores.each do |score| %>
             <tr>
-              <td><%= score.congress_member.name %></td>
+              <td><%= score.congress_member.name_with_title %></td>
               <td><%= score.congress_member.state %></td>
               <td><%= score.short_position %></td>
               <td><%= tweet_score_link(score) %></td>
