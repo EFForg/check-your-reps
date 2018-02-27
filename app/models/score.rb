@@ -19,6 +19,10 @@ class Score < ApplicationRecord
     end
   end
 
+  def short_position
+    position[0].upcase
+  end
+
   def self.lookup(state, district)
     all.includes(:congress_member).merge(CongressMember.lookup(state, district))
                                   .references(:congress_members)
