@@ -48,6 +48,9 @@ header {
     text-transform: uppercase;
     a {
       color: white;
+      &:hover {
+        text-decoration: none;
+      }
     }
     @include breakpoint(medium) {
       font-size: 3.3rem;
