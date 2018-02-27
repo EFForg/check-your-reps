@@ -9,43 +9,47 @@ body.action_page-embed_iframe {
   .container {
     @media all and (max-width: 640px) {
       padding: 0 !important;
+
       .tools-wrapper {
         padding: 0 1% !important;
       }
 
-    #tools {
-      .tool {
-        border: 1px solid $orange !important;
-        border-radius: 0;
-        box-shadow: none;
-      }
+      #tools {
+        .tool {
+          border: 1px solid $orange !important;
+          border-radius: 0;
+          box-shadow: none;
+        }
 
-      .tool .tool-container {
-        padding: 0;
-      }
+        .tool .tool-container {
+          padding: 0;
+        }
 
-      #congress-message-tool .tool-title {
-        background: $orange;
-        color: white;
-        font-weight: 600;
-        padding: 1rem;
-        text-transform: uppercase;
-      }
+        #congress-message-tool .tool-title {
+          background: $orange;
+          color: white;
+          font-weight: 600;
+          padding: 1rem;
+          text-transform: uppercase;
+        }
 
-      #congress-message-tool h3::before {
-        border-bottom: none !important;
-      }
+        #congress-message-tool h3::before {
+          border-bottom: none !important;
+        }
 
-      #congress-message-tool h3 {
-        color: black;
+        #congress-message-tool h3 {
+          color: black;
+        }
       }
     }
   }
+
   #tools #congress-message-tool h3 span.customize-message-popover,
   h3.privacy-notice-header span.privacy-notice-popover {
     border: 1px solid $orange;
     color: $orange;
   }
+
   #tools #congress-message-tool h3 span.customize-message-popover:hover,
   h3.privacy-notice-header span.privacy-notice-popover:hover {
     background: $orange;
@@ -92,6 +96,7 @@ body.action_page-embed_iframe {
   body.action_page-embed_iframe .facebook-button {
     display: none;
   }
+
   body.action_page-embed_iframe .google-button {
     display: none;
   }
