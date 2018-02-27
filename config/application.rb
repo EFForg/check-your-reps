@@ -20,5 +20,8 @@ module CheckYourReps
     config.eager_load_paths += %W(#{config.root}/lib)
 
     config.twitter_related = Rails.application.secrets.twitter_related ? Rails.application.secrets.twitter_related.split(" ") : []
+
+    # Support local fonts
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
