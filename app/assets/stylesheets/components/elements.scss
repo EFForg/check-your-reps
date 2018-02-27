@@ -41,41 +41,15 @@ label#zipcode-label {
 button,
 input[type="submit"],
 .orange-button {
-  background-color: $orange;
-  border: 1px solid $orange;
-  border-radius: rem-calc(7);
-  clear: left;
-  color: white;
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  margin: 1rem auto;
-  padding: 0.5rem;
-  text-transform: uppercase;
-  width: 100%;
-  @include breakpoint(medium) {
-    width: 11rem;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  @include buttons;
 }
 
 .white-button {
+  @include buttons;
   background-color: white;
   border: 2px solid black;
-  border-radius: rem-calc(7);
-  clear: left;
   color: black;
-  font-size: 0.7rem;
-  font-weight: 500;
-  margin: 1rem auto;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  width: 9rem;
+  padding: 0.25rem;
   a,
   &:visited {
     color: black;
