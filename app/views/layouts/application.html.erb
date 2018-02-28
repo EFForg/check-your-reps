@@ -27,8 +27,8 @@
       <%= tracking_image(29) %>
     </noscript>
     <script type="text/javascript">
-      const image = '<%= tracking_image(29, js: true) %>';
-      const referrer = encodeURIComponent(document.referrer);
+      var image = '<%= tracking_image(29, js: true) %>';
+      var referrer = encodeURIComponent(document.referrer);
       document.getElementById('anon-stats')
               .innerHTML = image.replace('REFERRER', referrer);
     </script>
