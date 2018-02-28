@@ -34,3 +34,7 @@ You can run all tests and linters with `rake test`.
 2. In the top navigation bar, click "Scores".
 3. To add a new score, click "New Score" in the top righthand corner.
 4. To edit an existing score, find it in the list of scores, hover over the three dots on the righthand side, and click "edit".
+
+## Action Center integration
+
+Check Your Reps integrations with EFF's [Action Center](https://act.eff.org) to allow users to contact their Congress Members via their comment forms. When we look up a user's representatives, we pass their bioguide IDs and location to the embedded action as described in the [Action Center documentation](https://github.com/EFForg/action-center-platform#embedding-actions).
