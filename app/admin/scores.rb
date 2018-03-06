@@ -27,4 +27,13 @@ ActiveAdmin.register Score do
     column :congress_member, sortable: :congress_member_id
     actions
   end
+
+  batch_action :update_all, form: { position: Score::POSITIONS } do |ids, inputs|
+    alert = if Score.where(id: ids).update_all(position: inputs['position'])
+      "Positions updated."
+    else
+      "Some positions could not be updated"
+    end
+    redirect_to admin_scores_path, alert: alert
+  end
 end
