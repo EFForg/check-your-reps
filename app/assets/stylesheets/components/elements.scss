@@ -80,8 +80,7 @@ input[type="submit"],
 //
 // It's got some problems, and at some point we'll probably want to use Foundation's.
 .tooltip {
-  border-bottom: 1px dotted black;
-  color: $orange;
+  border-bottom: 1px solid $black;
   cursor: help;
   display: inline-block;
   font-size: 0.6rem;

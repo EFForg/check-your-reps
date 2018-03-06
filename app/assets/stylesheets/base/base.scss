@@ -18,6 +18,10 @@ a {
   &:visited {
     text-decoration: underline;
   }
+  &.quiet-link {
+    color: $black;
+    border-bottom: 1px solid $black;
+  }
 }
 
 sup {
