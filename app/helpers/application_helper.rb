@@ -9,4 +9,8 @@ module ApplicationHelper
     params[:urlref] = "REFERRER" if js
     image_tag(base_url + params.to_query, style: "border:0", alt: "")
   end
+
+  def active_link_class(path)
+    'active' if current_page?(path)
+  end
 end

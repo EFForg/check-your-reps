@@ -22,7 +22,8 @@
         &:active,
         &:focus,
         &:hover,
-        &:visited {
+        &:visited,
+        &.active {
           text-decoration: underline;
         }
         @include breakpoint(medium) {

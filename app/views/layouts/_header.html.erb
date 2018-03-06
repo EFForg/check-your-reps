@@ -1,9 +1,9 @@
 <div class="top-bar">
   <nav id="main-menu" aria-labelledby="main-menu-label" class="large-12 columns">
     <ul class="row center">
-      <li><%= link_to "Act Now", "/" %></li>
-      <li><%= link_to "Full List", "/scores" %></li>
-      <li><%= link_to "About", "/about" %></li>
+      <li><%= link_to "Act Now", "/", class: active_link_class("/") %></li>
+      <li><%= link_to "Full List", "/scores", class: active_link_class("/scores") %></li>
+      <li><%= link_to "About", "/about", class: active_link_class("/about") %></li>
     </nav>
   </div>
 
