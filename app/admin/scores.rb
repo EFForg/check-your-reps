@@ -18,4 +18,13 @@ ActiveAdmin.register Score do
 
     f.actions
   end
+
+  index do
+    selectable_column
+    column :id
+    column :position
+    column :source_url
+    column :congress_member, sortable: :congress_member_id
+    actions
+  end
 end
