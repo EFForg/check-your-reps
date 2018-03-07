@@ -150,9 +150,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  @include breakpoint(medium) {
-    margin: 0 auto;
-  }
   th {
     color: $white;
     background: $charcoal;
@@ -189,7 +186,6 @@ table {
     margin-left: 0;
   }
 }
-
 
 ul, ol {
   margin-left: 3rem;
