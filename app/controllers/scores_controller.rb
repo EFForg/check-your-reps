@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ScoresController < ApplicationController
   def index
-    @scores = Score.all
+    @scores = Score.all.includes(:congress_member).order("congress_members.name ASC")
   end
 
   def lookup

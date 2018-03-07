@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5200.644 5617.201 15.688 19.874">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="white_sort_carrots" data-name="white sort carrots" transform="translate(4599 5039)">
+    <path id="triangle_up" data-name="triangle up" class="cls-1" d="M2740.644,242.134l7.874-7.873,7.813,7.873Z" transform="translate(-2139 343.94)"/>
+    <path id="triangle_down" data-name="triangle down" class="cls-1" d="M2740.644,242.134l7.874-7.873,7.813,7.873Z" transform="translate(3357.975 832.335) rotate(-180)"/>
+  </g>
+</svg>
