@@ -17,7 +17,7 @@ Similarly, a “no” is someone who has publically committed to voting against 
             <tr>
               <td><%= score.congress_member.name_with_title %></td>
               <td><%= score.congress_member.state %></td>
-              <td><%= score.short_position %></td>
+              <td class="position-<%= score.position.parameterize %>"><%= score.short_position %></td>
               <td><%= tweet_score_link(score) %></td>
             </tr>
           <% end %>
