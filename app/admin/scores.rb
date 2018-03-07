@@ -2,6 +2,12 @@
 ActiveAdmin.register Score do
   permit_params :position, :source_url, :congress_member_id
 
+  controller do
+    def scoped_collection
+      end_of_association_chain.includes(:congress_member)
+    end
+  end
+
   form do |f|
     f.inputs do
       input :congress_member_id,
@@ -24,7 +30,7 @@ ActiveAdmin.register Score do
     column :id
     column :position
     column :source_url
-    column :congress_member, sortable: :congress_member_id
+    column :congress_member, sortable: 'congress_members.name'
     actions
   end
 
