@@ -26,4 +26,25 @@ ActiveAdmin.register AdminUser do
     f.actions
   end
 
+  batch_action :invite, :method => :post do |ids|
+    successes = []
+    errors = []
+
+    AdminUser.where(id: ids).each do |user|
+      user.invite!(current_admin_user)
+
+      if user.errors.empty?
+        successes << user.email
+      else
+        messages = user.errors.full_messages.map { |msg| msg }.join
+        errors << "#{user.email} was not invited: #{messages}"
+      end
+    end
+
+    alert = ''
+    alert += "The following admins were successfully invited: #{successes.join(", ")}" if successes.present?
+    alert += "\n #{errors.join("\n")}" if errors.present?
+
+    redirect_to admin_admin_users_path, alert: alert
+  end
 end
