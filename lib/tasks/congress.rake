@@ -42,4 +42,13 @@ namespace :congress do
       end
     end
   end
+
+  desc "Update congress_members table and email admins about any new entries"
+  task check_for_updates: :environment do
+    Rake::Task["congress:update"].invoke
+
+    if (reps = CongressMember.includes(:score).where(scores: {id: nil})).any?
+      AdminMailer.new_congress_members(reps).deliver
+    end
+  end
 end
