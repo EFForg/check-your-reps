@@ -22,14 +22,14 @@ describe "Lookup of scores by address", type: :request do
     expect(cell_content).to include("Sen. Brontosaurus")
   end
 
-  it 'contains tweet input for each congress member' do
+  it 'contains tweet input for each congress member alphabetically' do
     tweet_links = body.search('a').select do |a|
       a.text == 'Tweet' &&
       a[:href].match(/twitter.com\/intent\/tweet/)
     end
 
     expect(tweet_links.count).to eq(CongressMember.count)
-    expect(tweet_links.first[:href]).to match(/T-Rex/)
-    expect(tweet_links.last[:href]).to match(/Brontosaurus/)
+    expect(tweet_links.first[:href]).to match(/Brontosaurus/)
+    expect(tweet_links.last[:href]).to match(/T-Rex/)
   end
 end
