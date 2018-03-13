@@ -123,3 +123,17 @@ input[type="submit"],
   line-height: 1.3rem;
   margin-bottom: 1.1rem;
 }
+.position-yes,
+.position-no,
+.position-uncommitted {
+  font-weight: bold;
+}
+.position-yes {
+  color: $green;
+}
+.position-no {
+  color: $eff-red;
+}
+.position-uncommitted {
+  color: $orange;
+}
