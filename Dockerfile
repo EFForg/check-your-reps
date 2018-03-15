@@ -3,7 +3,7 @@ FROM ruby:2.5-alpine
 RUN mkdir -p /opt/check-your-reps
 WORKDIR /opt/check-your-reps
 
-RUN adduser -DS -h /opt/trainers-hub www-data;
+RUN adduser -DS -h /opt/check-your-reps www-data;
 
 RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositories \
   && apk upgrade --update-cache \
@@ -14,7 +14,9 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositor
     postgresql-dev \
     postgresql-client \
     nodejs \
-    yarn
+    yarn \
+    ssmtp \
+  && echo "www-data:no-reply@eff.org:mail2.eff.org:587" > /etc/ssmtp/revaliases
 
 COPY Gemfile* ./
 RUN bundle install

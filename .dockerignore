@@ -17,3 +17,6 @@ node_modules/
 pgdata/
 public/uploads
 files
+
+# Ignore the dockerfile itself
+Dockerfile
