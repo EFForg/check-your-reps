@@ -30,10 +30,6 @@ You can run all tests and linters with `rake test`.
 
 ## Managing content
 
-### Adding admin users
-1. Visit [checkyourreps.org/admin/admin_users](https://checkyourreps.org/admin/admin_users)
-2. Click "New Admin User" in the top righthand corner.
-
 ### Managing scores
 1. Visit [checkyourreps.org/admin](https://checkyourreps.org/admin) and enter your username and password.
 2. In the top navigation bar, click "Scores".
