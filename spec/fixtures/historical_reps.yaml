@@ -1,0 +1,80 @@
+- id:
+    bioguide: B000226
+    govtrack: 401222
+    icpsr: 507
+    wikipedia: Richard Bassett (politician)
+    wikidata: Q518823
+    google_entity_id: kg:/m/02pz46
+  name:
+    first: Richard
+    last: Bassett
+  bio:
+    birthday: '1745-04-02'
+    gender: M
+  terms:
+  - type: sen
+    start: '1789-03-04'
+    end: '1793-03-03'
+    state: DE
+    class: 2
+    party: Anti-Administration
+- id:
+    bioguide: P000102
+    govtrack: 408510
+    icpsr: 7231
+    wikipedia: William Paterson (judge)
+    house_history: 19400
+    wikidata: Q729054
+    google_entity_id: kg:/m/01r022
+  name:
+    first: William
+    last: Paterson
+  bio:
+    birthday: '1745-12-24'
+    gender: M
+  terms:
+  - type: sen
+    start: '1789-03-04'
+    end: '1791-03-03'
+    state: NJ
+    class: 2
+    party: Pro-Administration
+- id:
+    bioguide: G000286
+    govtrack: 404647
+    icpsr: 3674
+    wikipedia: Benjamin Goodhue
+    house_history: 13925
+    wikidata: Q817516
+    google_entity_id: kg:/m/089c8h
+  name:
+    first: Benjamin
+    last: Goodhue
+  bio:
+    birthday: '1748-09-20'
+    gender: M
+  terms:
+  - type: rep
+    start: '1789-03-04'
+    end: '1791-03-03'
+    state: MA
+    district: 2
+    party: Federalist
+  - type: rep
+    start: '1791-10-24'
+    end: '1793-03-03'
+    state: MA
+    district: 2
+    party: Federalist
+  - type: rep
+    start: '1793-12-02'
+    end: '1795-03-03'
+    state: MA
+    district: 1
+    party: Federalist
+  - type: sen
+    start: '1796-01-01'
+    end: '1801-03-03'
+    state: MA
+    class: 1
+    party: Federalist

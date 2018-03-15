@@ -14,7 +14,8 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositor
     postgresql-dev \
     postgresql-client \
     nodejs \
-    yarn
+    yarn \
+    apk-cron
 
 COPY Gemfile* ./
 RUN bundle install
@@ -35,6 +36,11 @@ RUN mkdir -p /var/www /opt/check-your-reps/files \
                        /opt/check-your-reps/files \
                        /opt/check-your-reps/tmp \
                        /var/www
+
+COPY docker/crontab /etc/cron.d/crontab
+RUN chmod 0644 /etc/cron.d/crontab
+RUN touch /var/log/cron.log
+
 USER www-data
 
 CMD ["rails", "s", "-b", "0.0.0.0"]
