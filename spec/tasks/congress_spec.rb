@@ -7,24 +7,22 @@ RSpec.describe 'congress tasks' do
     Rake::Task.define_task(:environment)
   end
 
+  let(:args) { nil }
+  let(:run_task) { Rake.application.invoke_task("#{task}#{args}") }
+
   after { Rake.application[task].reenable }
 
-  describe "congress:check_for_updates" do
-    let(:task) { "congress:check_for_updates" }
-    let(:update_result) { {} }
-    let(:run_task) do
-      Rake.application.invoke_task task
-    end
+  describe "congress:update" do
+    let(:task) { "congress:update" }
 
     before do
-      allow(Rake::Task["congress:update"]).to receive(:invoke) { update_result }
+      allow(RestClient).to receive(:get).and_return(
+        File.open('./spec/fixtures/social_media.yaml').read,
+        File.open('./spec/fixtures/current_reps.yaml').read,
+        File.open('./spec/fixtures/historical_reps.yaml').read
+      )
       allow(AdminMailer).to receive(:new_congress_members)
-        .and_return(double(deliver: false))
-    end
-
-    it 'updates congress' do
-      expect(Rake::Task["congress:update"]).to receive(:invoke)
-      run_task
+        .and_return(double(deliver: true))
     end
 
     it 'sends no email' do
@@ -32,8 +30,8 @@ RSpec.describe 'congress tasks' do
       run_task
     end
 
-    context 'when a new congress member is created' do
-      let(:update_result) { FactoryBot.create(:congress_member) }
+    context "when notifications are turned on" do
+      let(:args) { [notify: true] }
 
       it 'reminds admins to update the new positions' do
         expect(AdminMailer).to receive(:new_congress_members)

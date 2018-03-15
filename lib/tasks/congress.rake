@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 namespace :congress do
   desc "Create/update records of Congress members"
-  task update: :environment do
+  task :update, [:notify] => :environment do |_task, args|
+    args.with_defaults(notify: false)
+    new_reps = []
+
     legislator_sources =
       [
         "https://raw.githubusercontent.com/unitedstates/congress-legislators/master/legislators-current.yaml",
@@ -29,9 +32,9 @@ namespace :congress do
           district:    term["district"].try(:to_s)
         }
 
-        CongressMember.
-          find_or_initialize_by(bioguide_id: info["id"]["bioguide"]).
-          update_attributes!(attributes)
+        rep = CongressMember.find_or_initialize_by(bioguide_id: info["id"]["bioguide"])
+        new_reps << rep if rep.new_record?
+        rep.update_attributes!(attributes)
       end
 
       YAML.load(social_media).each do |info|
@@ -41,14 +44,7 @@ namespace :congress do
           update_all(twitter_id: twitter_id)
       end
     end
-  end
 
-  desc "Update congress_members table and email admins about any new entries"
-  task check_for_updates: :environment do
-    Rake::Task["congress:update"].invoke
-
-    if (reps = CongressMember.includes(:score).where(scores: {id: nil})).any?
-      AdminMailer.new_congress_members(reps).deliver
-    end
+    AdminMailer.new_congress_members(new_reps).deliver if args[:notify]
   end
 end
