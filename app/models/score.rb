@@ -5,7 +5,7 @@ class Score < ApplicationRecord
 
   belongs_to :congress_member
   validates_uniqueness_of :congress_member
-  validates_inclusion_of :position, in: POSITIONS
+  validates_inclusion_of :position, in: POSITIONS, allow_nil: true
 
   def repair_position
     update_attribute(:position, DEFAULT_POSITION) unless POSITIONS.include?(position)
