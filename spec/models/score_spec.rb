@@ -42,9 +42,9 @@ RSpec.describe Score, type: :model do
     context 'if position is invalid' do
       let(:position) { 'some nonsense' }
 
-      it "sets the position to 'Uncommitted'" do
+      it "sets the position to nil" do
         expect { score.repair_position }.to change(score, :position)
-        expect(score.reload.position).to eq(Score::DEFAULT_POSITION)
+        expect(score.reload.position).to eq(nil)
       end
     end
   end

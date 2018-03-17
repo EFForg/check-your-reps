@@ -10,7 +10,7 @@ class Score < ApplicationRecord
   scope :with_position, -> { where.not(position: nil) }
 
   def repair_position
-    update_attribute(:position, DEFAULT_POSITION) unless POSITIONS.include?(position)
+    update_attribute(:position, nil) unless POSITIONS.include?(position)
   end
 
   def display_position
