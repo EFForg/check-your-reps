@@ -5,6 +5,7 @@ class CongressMember < ApplicationRecord
   delegate :position, :source_url, to: :score
 
   validates_uniqueness_of :bioguide_id
+  after_create :ensure_score
 
   default_scope { order(name: :asc) }
   scope :current, -> { where("? <= term_end", Time.now) }
@@ -26,5 +27,11 @@ class CongressMember < ApplicationRecord
       title = "Rep."
     end
     "#{title} #{name}"
+  end
+
+  private
+
+  def ensure_score
+    create_score unless score.present?
   end
 end
