@@ -1,6 +1,25 @@
 require "rails_helper"
 
 RSpec.describe CongressMember, type: :model do
+  describe "ensure_score" do
+    let(:rep) { FactoryBot.build(:congress_member) }
+
+    it "creates a score for a new rep" do
+      expect { rep.save }.to change(Score, :count).by(1)
+      expect(rep.score).to be_present
+      expect(rep.position).to be_nil
+    end
+
+    context "with a score" do
+      before { FactoryBot.build(:score, position: 'Yes', congress_member: rep) }
+
+      it "respects the score" do
+        expect { rep.save }.to change(Score, :count).by(1)
+        expect(rep.position).to eq("Yes")
+      end
+    end
+  end
+
   describe "self.lookup" do
     let(:my_congress_members) do
       [ FactoryBot.create(:senator, state: "CA"),

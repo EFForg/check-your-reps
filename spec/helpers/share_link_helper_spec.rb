@@ -15,7 +15,7 @@ describe ShareLinkHelper do
   end
 
   describe '#tweet_score_link' do
-    let(:score) { FactoryBot.build_stubbed(:score) }
+    let(:score) { FactoryBot.create(:score) }
 
     subject(:tweet_score_link) { helper.tweet_score_link(score) }
 

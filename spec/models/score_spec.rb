@@ -62,15 +62,12 @@ RSpec.describe Score, type: :model do
   end
 
   describe "self.lookup" do
-    let(:score) do
-      FactoryBot.create(:score, congress_member: FactoryBot.create(:senator,
-                                                                   state: "CA"))
+    let!(:score) do
+      FactoryBot.create(:senator, state: "CA").score
     end
 
     it "looks up representatives by address" do
-      score
-      expect(Score.lookup("CA", "14")).
-        to match_array([score])
+      expect(Score.lookup("CA", "14")).to match_array([score])
     end
   end
 end
