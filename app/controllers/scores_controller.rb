@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 class ScoresController < ApplicationController
   def index
-    @scores = Score.all.includes(:congress_member).order("congress_members.name ASC")
+    @scores = Score.with_position
+      .joins(:congress_member)
+      .order("congress_members.name ASC")
   end
 
   def lookup
@@ -9,7 +11,7 @@ class ScoresController < ApplicationController
       @location = params.permit(:street, :zipcode).merge(
         SmartyStreets.get_district(params[:street], params[:zipcode])
       )
-      @scores = Score.lookup(@location[:state], @location[:district])
+      @scores = Score.with_position.lookup(@location[:state], @location[:district])
     rescue SmartyStreets::AddressNotFound => e
       @error = :address_not_found
     end

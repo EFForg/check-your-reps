@@ -7,6 +7,8 @@ class Score < ApplicationRecord
   validates_uniqueness_of :congress_member
   validates_inclusion_of :position, in: POSITIONS, allow_nil: true
 
+  scope :with_position, -> { where.not(position: nil) }
+
   def repair_position
     update_attribute(:position, DEFAULT_POSITION) unless POSITIONS.include?(position)
   end

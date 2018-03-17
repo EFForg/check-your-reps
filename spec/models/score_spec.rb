@@ -17,6 +17,17 @@ RSpec.describe Score, type: :model do
     end
   end
 
+  describe '.with_position' do
+    let!(:yes) { FactoryBot.create(:score, position: 'Yes') }
+    let!(:no) { FactoryBot.create(:score, position: 'No') }
+    let!(:uncommitted) { FactoryBot.create(:score, position: Score::DEFAULT_POSITION) }
+    let!(:no_position) { FactoryBot.create(:score, position: nil) }
+
+    it "includes only scores with non-nil positions" do
+      expect(Score.with_position).to match_array([yes, no, uncommitted])
+    end
+  end
+
   describe '.repair_position' do
     subject(:score) { FactoryBot.build(:score, position: position) }
 
