@@ -26,7 +26,7 @@ ActiveAdmin.register AdminUser do
     f.actions
   end
 
-  batch_action :invite, :method => :post do |ids|
+  batch_action :invite, method: :post do |ids|
     successes = []
     errors = []
 
@@ -41,7 +41,7 @@ ActiveAdmin.register AdminUser do
       end
     end
 
-    alert = ''
+    alert = ""
     alert += "The following admins were successfully invited: #{successes.join(", ")}" if successes.present?
     alert += "\n #{errors.join("\n")}" if errors.present?
 

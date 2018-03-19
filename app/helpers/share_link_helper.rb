@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ShareLinkHelper
   def share_link(type)
     fixed_type = type.to_s.gsub(/\W/, "")
