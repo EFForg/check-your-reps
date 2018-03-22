@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def active_link_class(path)
-    'active' if current_page?(path)
+    "active" if current_page?(path)
   end
 end
