@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :congress_member do
     sequence(:bioguide_id) { |n| "C0010#{n+34}" }
     term_end (Time.now + 1.year).strftime("%Y-%m-%d")
-    name "Buffy Summers"
+    sequence(:name) { |n| "Buffy Summers the #{n}#{n.ordinal}" }
     chamber "senate"
     state "CA"
 
