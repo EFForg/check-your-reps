@@ -9,7 +9,9 @@ class CongressMember < ApplicationRecord
 
   default_scope { order(name: :asc) }
   scope :current, -> { where("? <= term_end", Time.now) }
-  scope :without_scores, -> { left_outer_joins(:score).where(scores: { id: nil }) }
+  scope :without_scores, -> {
+    left_outer_joins(:score).merge(Score.without_position)
+  }
 
   def self.lookup(state, district)
     current.where(state: state).where("chamber = ? OR district = ?", "senate", district)

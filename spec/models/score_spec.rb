@@ -27,6 +27,12 @@ RSpec.describe Score, type: :model do
     it "includes only scores with non-nil positions" do
       expect(Score.with_position).to match_array([yes, no, uncommitted])
     end
+
+    it "stays in sync with .without_position" do
+      expect(described_class.with_position).to match_array(
+        described_class.where.not(id: described_class.without_position)
+      )
+    end
   end
 
   describe '.repair_position' do

@@ -20,6 +20,34 @@ RSpec.describe CongressMember, type: :model do
     end
   end
 
+  describe "without_scores" do
+    let(:no_score_member) { FactoryBot.create(:congress_member) }
+    let(:empty_position_member) { FactoryBot.create(:congress_member) }
+    let(:nil_position_member) { FactoryBot.create(:congress_member) }
+    let(:declared_position_member) { FactoryBot.create(:congress_member) }
+    let(:members_without_scores) { described_class.without_scores }
+
+    before do
+      no_score_member.score.destroy
+      empty_position_member.score.update(position: '')
+      nil_position_member.score.update(position: nil)
+      declared_position_member.score.update(position: Score::POSITIONS.sample)
+    end
+
+    it "includes members that have no score" do
+      expect(members_without_scores).to include(no_score_member)
+    end
+    it "includes members that have a score with empty position" do
+      expect(members_without_scores).to include(empty_position_member)
+    end
+    it "includes members that have a score with nil position" do
+      expect(members_without_scores).to include(nil_position_member)
+    end
+    it "does not include members that have a declared position" do
+      expect(members_without_scores).not_to include(declared_position_member)
+    end
+  end
+
   describe "self.lookup" do
     let(:my_congress_members) do
       [ FactoryBot.create(:senator, state: "CA"),
