@@ -1,17 +1,14 @@
 require "rails_helper"
 
 describe "Lookup of scores by address", type: :request do
-  let(:score) do
-    FactoryBot.create(:score, congress_member: FactoryBot.create(:senator,
-                                                                 state: "CA"))
-  end
-
+  let(:score) { FactoryBot.create(:score) }
+  let!(:empty_score) { FactoryBot.create(:score, position: nil) }
   let(:address) do
     { street: "815 Eddy Street", zipcode: "94109" }
   end
 
   describe "successful score lookup" do
-    before(:each) { score }
+    before(:each) { score.congress_member.update(state: "CA") }
 
     before(:each) do
       allow(SmartyStreets).to receive(:get_district).
@@ -27,6 +24,11 @@ describe "Lookup of scores by address", type: :request do
     it "looks up scorecards by address" do
       get "/scores/lookup", params: address
       expect(response.body).to include("Buffy Summers")
+    end
+
+    it "does not include empty scorecards" do
+      get "/scores/lookup", params: address
+      expect(response.body).not_to include(empty_score.congress_member.name)
     end
 
     it "returns scorecards to javascript as json" do

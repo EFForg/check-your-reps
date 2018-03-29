@@ -5,10 +5,13 @@ class CongressMember < ApplicationRecord
   delegate :position, :source_url, to: :score
 
   validates_uniqueness_of :bioguide_id
+  after_create :ensure_score
 
   default_scope { order(name: :asc) }
   scope :current, -> { where("? <= term_end", Time.now) }
-  scope :without_scores, -> { left_outer_joins(:score).where(scores: { id: nil }) }
+  scope :without_scores, -> {
+    left_outer_joins(:score).merge(Score.without_position)
+  }
 
   def self.lookup(state, district)
     current.where(state: state).where("chamber = ? OR district = ?", "senate", district)
@@ -26,5 +29,11 @@ class CongressMember < ApplicationRecord
       title = "Rep."
     end
     "#{title} #{name}"
+  end
+
+  private
+
+  def ensure_score
+    create_score unless score.present?
   end
 end

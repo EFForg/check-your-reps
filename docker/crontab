@@ -1,0 +1,1 @@
+20 * * * * root cd /opt/check-your-reps && rake congress:update >>/var/log/cron.log 2>&1

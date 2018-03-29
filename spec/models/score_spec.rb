@@ -17,6 +17,24 @@ RSpec.describe Score, type: :model do
     end
   end
 
+  describe '.with_position' do
+    let!(:yes) { FactoryBot.create(:score, position: 'Yes') }
+    let!(:no) { FactoryBot.create(:score, position: 'No') }
+    let!(:uncommitted) { FactoryBot.create(:score, position: Score::DEFAULT_POSITION) }
+    let!(:no_position) { FactoryBot.create(:score, position: nil) }
+    let!(:blank_position) { FactoryBot.create(:score, position: '') }
+
+    it "includes only scores with non-nil positions" do
+      expect(Score.with_position).to match_array([yes, no, uncommitted])
+    end
+
+    it "stays in sync with .without_position" do
+      expect(described_class.with_position).to match_array(
+        described_class.where.not(id: described_class.without_position)
+      )
+    end
+  end
+
   describe '.repair_position' do
     subject(:score) { FactoryBot.build(:score, position: position) }
 
@@ -31,9 +49,9 @@ RSpec.describe Score, type: :model do
     context 'if position is invalid' do
       let(:position) { 'some nonsense' }
 
-      it "sets the position to 'Uncommitted'" do
+      it "sets the position to nil" do
         expect { score.repair_position }.to change(score, :position)
-        expect(score.reload.position).to eq(Score::DEFAULT_POSITION)
+        expect(score.reload.position).to eq(nil)
       end
     end
   end
@@ -62,15 +80,12 @@ RSpec.describe Score, type: :model do
   end
 
   describe "self.lookup" do
-    let(:score) do
-      FactoryBot.create(:score, congress_member: FactoryBot.create(:senator,
-                                                                   state: "CA"))
+    let!(:score) do
+      FactoryBot.create(:senator, state: "CA").score
     end
 
     it "looks up representatives by address" do
-      score
-      expect(Score.lookup("CA", "14")).
-        to match_array([score])
+      expect(Score.lookup("CA", "14")).to match_array([score])
     end
   end
 end

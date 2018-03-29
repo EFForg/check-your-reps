@@ -15,6 +15,7 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositor
     postgresql-client \
     nodejs \
     yarn \
+    apk-cron \
     ssmtp \
   && echo "www-data:no-reply@eff.org:mail2.eff.org:587" > /etc/ssmtp/revaliases
 
@@ -37,6 +38,11 @@ RUN mkdir -p /var/www /opt/check-your-reps/files \
                        /opt/check-your-reps/files \
                        /opt/check-your-reps/tmp \
                        /var/www
+
+COPY docker/crontab /etc/cron.d/crontab
+RUN chmod 0644 /etc/cron.d/crontab
+RUN touch /var/log/cron.log
+
 USER www-data
 
 CMD ["rails", "s", "-b", "0.0.0.0"]

@@ -16,9 +16,7 @@ ActiveAdmin.register Score do
         include_blank: false
       input :position,
         as: :select,
-        collection: Score::POSITIONS,
-        default: Score::DEFAULT_POSITION,
-        include_blank: false
+        collection: Score::POSITIONS
       input :source_url
     end
 
