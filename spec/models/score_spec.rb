@@ -22,6 +22,7 @@ RSpec.describe Score, type: :model do
     let!(:no) { FactoryBot.create(:score, position: 'No') }
     let!(:uncommitted) { FactoryBot.create(:score, position: Score::DEFAULT_POSITION) }
     let!(:no_position) { FactoryBot.create(:score, position: nil) }
+    let!(:blank_position) { FactoryBot.create(:score, position: '') }
 
     it "includes only scores with non-nil positions" do
       expect(Score.with_position).to match_array([yes, no, uncommitted])

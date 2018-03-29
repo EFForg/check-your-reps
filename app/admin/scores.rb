@@ -16,7 +16,7 @@ ActiveAdmin.register Score do
         include_blank: false
       input :position,
         as: :select,
-        collection: [Score::POSITIONS, nil].flatten
+        collection: Score::POSITIONS
       input :source_url
     end
 
