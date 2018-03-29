@@ -8,7 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
       missing = CongressMember.current.without_scores
 
       if missing.empty?
-        text_node "All congress members have scores. Nice."
+        div class: "blank_slate_container", id: "dashboard_default_message" do
+          span class: "blank_slate" do
+            text_node "All congress members have scores. Nice."
+          end
+        end
       else
         table_for missing.map do
           column(:name) do |rep|
