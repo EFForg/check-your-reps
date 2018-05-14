@@ -1,19 +1,29 @@
 require "rails_helper"
 
 describe "Lookup of scores by address", type: :request do
-  let(:score) { FactoryBot.create(:score) }
-  let!(:empty_score) { FactoryBot.create(:score, position: nil) }
+  let!(:rep) { FactoryBot.create(:representative, state: "CA", district: "14") }
+  let!(:sen) { FactoryBot.create(:senator, state: "CA") }
+  let!(:empty_rep) { FactoryBot.create(:representative, state: "CA", district: "14") }
   let(:address) do
     { street: "815 Eddy Street", zipcode: "94109" }
   end
 
-  describe "successful score lookup" do
-    before(:each) { score.congress_member.update(state: "CA") }
+  before do
+    rep.score.update(position: "Yes")
+    sen.score.update(position: "Yes")
+  end
 
+  describe "successful score lookup" do
     before(:each) do
       allow(SmartyStreets).to receive(:get_district).
         with(address[:street], address[:zipcode]).
         and_return({ state: "CA", district: "14" })
+    end
+
+    it "only includes House members" do
+      get "/scores/lookup", params: address
+      expect(response.body).not_to include(sen.name)
+      expect(response.body).to include(rep.name)
     end
 
     it "shows the user's state and district" do
@@ -28,7 +38,7 @@ describe "Lookup of scores by address", type: :request do
 
     it "does not include empty scorecards" do
       get "/scores/lookup", params: address
-      expect(response.body).not_to include(empty_score.congress_member.name)
+      expect(response.body).not_to include(empty_rep.name)
     end
 
     it "returns scorecards to javascript as json" do
@@ -50,7 +60,7 @@ describe "Lookup of scores by address", type: :request do
     it "shows an error when the address isn't recognized" do
       allow(SmartyStreets).to receive(:get_district).
         with(address[:street], address[:zipcode]).
-        and_return({ state: "CA", district: "14" })
+        and_return({ state: "NV", district: "09" })
 
       get "/scores/lookup", params: address
       expect(response.body).to include("couldn't find any information for")
