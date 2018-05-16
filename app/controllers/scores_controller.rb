@@ -3,6 +3,7 @@ class ScoresController < ApplicationController
   def index
     @scores = Score.with_position
       .joins(:congress_member)
+      .merge(CongressMember.house)
       .order("congress_members.name ASC")
   end
 
@@ -11,7 +12,9 @@ class ScoresController < ApplicationController
       @location = params.permit(:street, :zipcode).merge(
         SmartyStreets.get_district(params[:street], params[:zipcode])
       )
-      @scores = Score.with_position.lookup(@location[:state], @location[:district])
+      @scores = Score.with_position
+        .joins(:congress_member).merge(CongressMember.house)
+        .lookup(@location[:state], @location[:district])
     rescue SmartyStreets::AddressNotFound => e
       @error = :address_not_found
     end

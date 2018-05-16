@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class CongressMember < ApplicationRecord
+  CHAMBERS = { senate: "senate", house: "house" }
+
   has_one :score, dependent: :destroy
   accepts_nested_attributes_for :score
   delegate :position, :source_url, to: :score
@@ -12,6 +14,8 @@ class CongressMember < ApplicationRecord
   scope :without_scores, -> {
     left_outer_joins(:score).merge(Score.without_position)
   }
+  scope :house, -> { where(chamber: CHAMBERS[:house]) }
+  scope :senate, -> { where(chamber: CHAMBERS[:senate]) }
 
   def self.lookup(state, district)
     current.where(state: state).where("chamber = ? OR district = ?", "senate", district)
@@ -23,7 +27,7 @@ class CongressMember < ApplicationRecord
   end
 
   def name_with_title
-    if chamber == "senate"
+    if chamber == CHAMBERS[:senate]
       title = "Sen."
     else
       title = "Rep."
