@@ -15,7 +15,7 @@ module ShareLinkHelper
     status ||= I18n.t("tweet.message.generic")
     "https://twitter.com/intent/tweet?" +
     {
-      status: status,
+      text: status,
       related: Rails.application.config.twitter_related.to_a.join(",")
     }.to_query
   end
