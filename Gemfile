@@ -28,7 +28,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 
 # Content administration
-gem "active_material", github: "vigetlabs/active_material"
+gem "active_material", path: "./vendor/active_material"
 gem "activeadmin"
 gem "devise"
 gem "devise_invitable"
