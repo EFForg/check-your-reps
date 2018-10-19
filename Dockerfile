@@ -10,7 +10,6 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositor
   && apk add \
     build-base \
     tzdata \
-    git \
     postgresql-dev \
     postgresql-client \
     nodejs \
@@ -20,6 +19,7 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >>/etc/apk/repositor
   && echo "www-data:no-reply@eff.org:mail2.eff.org:587" > /etc/ssmtp/revaliases
 
 COPY Gemfile* ./
+COPY ./vendor/active_material ./vendor/active_material
 RUN bundle install
 
 COPY package.json ./
