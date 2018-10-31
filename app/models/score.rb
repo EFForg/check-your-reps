@@ -2,7 +2,7 @@
 class Score < ApplicationRecord
   DEFAULT_POSITION = "Uncommitted"
   POSITIONS = (%w(Yes No) << DEFAULT_POSITION).freeze
-  NULL_POSITIONS = [nil, '']
+  NULL_POSITIONS = [nil, ""]
 
   belongs_to :congress_member
   validates_uniqueness_of :congress_member
